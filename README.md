@@ -9,4 +9,4 @@ Creación de infraestructura virtual para transparencia.ugr.es, con creación de
 Integrantes del grupo:
 
 Alberto Mesa Navarro.<br />
-Jose Carlos Sánchez Hurtado.
+José Carlos Sánchez Hurtado.
