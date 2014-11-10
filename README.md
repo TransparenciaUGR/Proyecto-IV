@@ -1,7 +1,7 @@
 Proyecto-IV
 ===========
 
-Repositorio para el proyecto de la asignatura "Infraestructuras Virtuales"
+Repositorio para el proyecto de "Infraestructuras Virtuales"
 
 ###Proyecto elegido: Infraestructura virtual para transparencia.
 
