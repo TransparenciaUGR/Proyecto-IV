@@ -14,6 +14,9 @@ Marcos Jiménez Fernández.  <br>
 Jesús Navarro Guzmán.  <br>
 Francisco Toranzo Santiago. <br>
 
+Despliegue inicial en node.js con BD postgresql para realizar nuestras primeras pruebas iniciales.
+Otra información:
+
 # node-js-getting-started
 
 A barebones Node.js app using [Express 4](http://expressjs.com/).
