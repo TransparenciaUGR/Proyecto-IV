@@ -14,18 +14,18 @@ Marcos Jiménez Fernández.  <br>
 Jesús Navarro Guzmán.  <br>
 Francisco Toranzo Santiago. <br>
 
+## Aplicación básica inicial transnode (transparencia - node.js)
+
 Despliegue inicial en node.js con BD postgresql para realizar nuestras primeras pruebas iniciales.
 Otra información:
 
-# node-js-getting-started
+Plantilla de aplicación en Node.js usando [Express 4](http://expressjs.com/).
 
-A barebones Node.js app using [Express 4](http://expressjs.com/).
+La aplicación se ha creado apoyada por el siguiente artículo: [Empezando a usar Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs).
 
-This application support the [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs) article - check it out.
+## Ejecución Local:
 
-## Running Locally
-
-Make sure you have [Node.js](http://nodejs.org/) and the [Heroku Toolbelt](https://toolbelt.heroku.com/) installed.
+Se necesita instalar [Node.js](http://nodejs.org/) y las herramientas asociadas de Heroku: [Heroku Toolbelt](https://toolbelt.heroku.com/):
 
 ```sh
 $ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
@@ -34,9 +34,9 @@ $ npm install
 $ npm start
 ```
 
-Your app should now be running on [localhost:5000](http://localhost:5000/).
+Una vez realizada la ejecución local, la aplicación puede verse en [localhost:5000](http://localhost:5000/).
 
-## Deploying to Heroku
+## Despliegue en Heroku:
 
 ```
 $ heroku create
@@ -44,15 +44,15 @@ $ git push heroku master
 $ heroku open
 ```
 
-## Documentation
+## Documentación:
 
-For more information about using Node.js on Heroku, see these Dev Center articles:
+Para más información sobre el uso de Node.js sobre Heroku, ver estos artículos:
 
-- [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
-- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
-- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
-- [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
-- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
+- [Empezando con Node.js en Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
+- [Soporte Node.js en Heroku](https://devcenter.heroku.com/articles/nodejs-support)
+- [Node.js sobre Heroku](https://devcenter.heroku.com/categories/nodejs)
+- [Prácticas recomendadas para el desarrollo en Node.js](https://devcenter.heroku.com/articles/node-best-practices)
+- [Uso WebSockets en Heroku con Node.js](https://devcenter.heroku.com/articles/node-websockets)
 
 ***********************************************************
 ***********************************************************
