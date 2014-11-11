@@ -4,6 +4,7 @@ Proyecto-IV
 Repositorio para el proyecto de la asignatura "Infraestructuras Virtuales"
 
 ###Proyecto elegido: Infraestructura virtual para transparencia.
+[Link de progreso provisional](https://transnode.herokuapp.com/).
 
 Creación de infraestructura virtual para transparencia.ugr.es, con creación de tests para el código, integración continua, descripción de configuración mediante Chef o Ansible y configuración del despliegue automático del mismo en cualquier servicio.
 Integrantes del grupo:
@@ -14,7 +15,7 @@ Marcos Jiménez Fernández.  <br>
 Jesús Navarro Guzmán.  <br>
 Francisco Toranzo Santiago. <br>
 
-## Aplicación básica inicial transnode (transparencia - node.js)
+## Aplicación básica inicial (transparencia - node.js)
 
 Despliegue inicial en node.js con BD postgresql para realizar nuestras primeras pruebas iniciales.
 Otra información:
@@ -28,11 +29,12 @@ La aplicación se ha creado apoyada por el siguiente artículo: [Empezando a usa
 Se necesita instalar [Node.js](http://nodejs.org/) y las herramientas asociadas de Heroku: [Heroku Toolbelt](https://toolbelt.heroku.com/):
 
 ```sh
-$ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
+$ git clone git@github.com:heroku/node-js-getting-started.git # o clonar fork propio
 $ cd node-js-getting-started
 $ npm install
 $ npm start
 ```
+Nota: el nombre node-js-getting-started.git variará.
 
 Una vez realizada la ejecución local, la aplicación puede verse en [localhost:5000](http://localhost:5000/).
 
