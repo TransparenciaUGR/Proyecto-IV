@@ -4,7 +4,7 @@ Proyecto-IV
 Repositorio para el proyecto de la asignatura "Infraestructuras Virtuales"
 
 ###Proyecto elegido: Infraestructura virtual para transparencia.
-[Link de progreso provisional](https://transnode.herokuapp.com/).
+[Link de progreso provisional](https://transnode.herokuapp.com/): en cada ejecución muestra 2 caras aleatorias por pantalla.
 
 Creación de infraestructura virtual para transparencia.ugr.es, con creación de tests para el código, integración continua, descripción de configuración mediante Chef o Ansible y configuración del despliegue automático del mismo en cualquier servicio.
 Integrantes del grupo:
