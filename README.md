@@ -1,4 +1,3 @@
-Proyecto-IV
 ===========
 
 Repositorio para el proyecto de la asignatura "Infraestructuras Virtuales"
@@ -14,6 +13,91 @@ Jose Carlos Sánchez Hurtado. <br>
 Marcos Jiménez Fernández.  <br>
 Jesús Navarro Guzmán.  <br>
 Francisco Toranzo Santiago. <br>
+
+
+## ¿Qué es Heroku?
+
+Es un servicio de Hosting en la nube. Esto ayuda a que los clientes no tienen que contar
+con infraestructura, el tiempo de procesamiento y almacenamiento, si no que todo esto se le 
+renta a un tercero. Es un servicio gratuito hasta los 5 MB de espacio para base de datos y 50 
+MB para los archivos incluyendo repositorios Git. Es un servicio basado en la nube de Amazon 
+Web Services. La implementación de este servicio se hace a través de GIT y se instala a través 
+de un gem.
+
+Las ventajas que nos ofrece usar Heroku es que podemos olvidarnos de usar servidores, pudiendo enfocarnos en la aplicación que queremos desplegar, y es gratuita en cierto modo, puesto que sí se sobrepasan los límites anteriormente mencionados se empezará a pagar una cuota. Heroku puede trabajar con con MySQL, SQLite, PostgreSQL, MongoDB, CouchDB y Memcache a través de un tercero Mongo HQ y Cloudant añadidos como add-ons. 
+
+Para el caso de nuestra aplicación para trasnparente ugr, utilizaremos la base de datos
+MongoDB aunque aún no está implementada en la aplicación de ejemplo. Ya que para poder 
+añadirla nos pide la verificación de cuenta con la tarjeta de crédito y tenemos dudas sobre ello.
+
+
+## ¿Qué es transparenteUGR?
+
+<b>transparente.ugr</b> es un portal web dedicado a ofrecer información a la sociedad y en particular a la Comunidad Universitaria, teniendo como objetivo el libre acceso y veracidad de esa información.
+
+Este portal es algo más que un simple tablón de información. Es un conjunto de herramientas accesibles, simples de utilizar e inteligibles y que sean útiles para todos aquellos procesos relacionados con la transparencia y con la demanda de información por parte de los ciudadanos.
+
+Su funcionalidad de podría dividir en:
+
+<b>Administración:</b> todas las cuestiones relacionadas con <i>Personal</i>, <i>Información Económica</i> como presupuestos, auditorías, etc, y toda clase de <i>Servicios</i> tanto de la universidad como de empleo.
+
+<b>Docencia:</b> con amplia información de oferta y demanda académica, el claustro de profesores y estudiantes.
+
+<b>Gestión e investigación:</b> información relacionada con la <i>Misión de la universidad</i>, <i>Plan estratégico</i> para hacer operativa dicha misión, composición del gobierno y estatutos de la universidad, etc.
+
+Y un apartado que incluye la Normativa Legal que rige en la Ley de transparencia, normativas y convenios.
+
+
+## MongoDB
+
+En este apartado vamos a indicar como crear y usar una base de datos para nuestro proyecto usando <b>MongoDB</b>.
+
+Lo primero que habrá que hacer será crear una base de datos. Para ello, vamos a crear un modelo en un archivo con extensión .js que incluya la información de dicha base de datos. Un ejemplo de este archivo seria:
+
+```sh
+var mongoose = require('mongoose'),
+    Sch   = mongoose.Sch;
+
+var showSch = new Sch({
+  title:    { type: String },
+  year:     { type: Number },
+  country:  { type: String },    
+});
+
+module.exports = mongoose.model('Show', showSch);
+```
+
+Con esto ya podríamos implementar la conexión a la BD en el archivo app.js de nuestro proyecto, añadiendole las siguientes lineas:
+
+```sh
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/shows');
+```
+
+Para que esto funcione en nuestro entorno local, necesitamos tener instalado MongoDB. Dependiendo de vuestro sistema operativo se hace de una forma u otra. [Aquí podemos encontrar la documentación oficial](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/). Si tenemos un Mac, se instala de la misma manera que Node.js con <b>brief update</b> y <b>brief install mongodb.</b>
+
+Una vez hecho esto, para poder iniciar MongoDB se debe ejecutar en otra terminal mongod. Con Mongo arrancado ya podemos ejecutar la aplicación con <b>node app.js</b> desde la terminal.
+
+Ahora desde otra terminal, podemos entrar al shell de MongoDB y comprobar que la base de datos se ha creado correctamente. Para ello ejecutamos el comando <b>mongo</b>:
+
+```sh
+$ mongo
+MongoDB shell version: 2.4.1
+connecting to: test
+> use shows
+switched to db shows
+> show dbs
+local	0.078125GB
+shows	(empty)
+```
+
+Una vez introducida información en la BD, tenemos que unir las funciones para el manejo de la información que usa mongoDB al proyecto, indicando <b>app.get("funcion");</b> siendo "funcion" la función correspondiente de introducir, modificar o eliminar información.
+
+Para terminar, enlazamos el módulo al archivo principal de la aplicación app.js:
+
+```sh
+routes = require('./routes/shows')(app);
+```
 
 ## Aplicación básica inicial (transparencia - node.js)
 
@@ -40,11 +124,101 @@ Una vez realizada la ejecución local, la aplicación puede verse en [localhost:
 
 ## Despliegue en Heroku:
 
+Vamos a realizar el despliegue de la aplicación una vez testeado un despligue de una aplicación básica en Heroku. Para ello, lo primero que tenemos que hacer es clonar el repositorio que vamos a desplegar a nuestra máquina. Lo hacemos así:
+
 ```
-$ heroku create
-$ git push heroku master
-$ heroku open
+git clone https://github.com/TransparenciaUGR/Proyecto-IV.git
 ```
+
+El repositorio se descargará a nuestra máquina. Ahora nos movemos a esta carpeta:
+
+```
+cd Proyecto-IV
+```
+
+Es necesario instalar Heroku en Ubuntu, por ello, lo hacemos con el siguiente comando:
+
+```
+wget https://toolbelt.heroku.com/install-ubuntu.sh | sh
+chmod 777 install-ubuntu.sh
+./install-ubuntu
+```
+Podemos ver que lo tenemos instalado con:
+```
+heroku --version
+```
+En mi caso:<br>
+<img src="http://i60.tinypic.com/2hhkdpg.png"></img>
+
+Hecho esto, tenemos que crearnos una cuenta en Heroku porque la necesitaremos para desplegar el proyecto. Hecho esto, entramos a Heroku en Ubuntu haciendo:
+```
+heroku login
+```
+Y seguidamente introducimos nuestros credenciales:
+<img src="http://i60.tinypic.com/25qysye.png"></img>
+
+Ahora, dentro de la carpeta de nuestro proyecto, hacemos lo siguiente:
+```
+heroku create
+```
+E inicializamos nuestro proyecto:
+```
+git init
+```
+En el caso de que al hacer alguna de estas operaciones de algún tipo de error sobre los permisos, tecleamos lo siguiente:
+```
+chmod 7777 -R Proyecto-IV
+```
+
+
+##Utilización de keys Heroku-Github:
+
+Para tener una mayor sincronización entre nuestro SaaS en este caso Heroku y git vamos a realizar una conexión entre ambos via ssh.
+
+Para ello es necesario realizar una serie de pasos los cuales vamos a detallar a continuación:
+
+En primer lugar generamos un archivo id_rsa.pub ejecutando el siguiente comando en la terminal:
+
+```
+ssh-keygen
+```
+
+Una vez generado el archivo correspondiente escrbimos en la terminal lo siguiente:
+
+```
+cat ~/.ssh/id_rsa.pub
+```
+
+Esto nos genera un tipo de cifrado el cual tenemos que añadir tanto a Heroku como a github.
+
+Pasos para añadir la contraseña a github:
+
+1. Dentro de github nos vamos a settings > SSH Keys > Add Ssh key 
+  damos un título a la key y pegamos el código en el cuadro de mayor tamaño que nos aparece y pulsamos en el botón   Add key
+
+Acontinuación recibimos un correo para indicarnos que hemos añadido un key a GitHub
+
+- [Correo key GitHub](http://i61.tinypic.com/3eyah.png)
+
+Pasos para añadir key a Heroku:
+
+1. En la terminar escrbimos:
+```
+heroku keys:add ~/.ssh/id_rsa.pub
+```
+
+Acto y seguido recibiremos un correo para indicarnos que hemos añadido un key a Heroku.
+
+- [Correo key Heroku](http://i62.tinypic.com/5uk7ia.png)
+
+Una vez realizados los paso anteriores verificamos la existencia de la conexión entre git y Heroku, para ello escribimos en la terminal el siguiente comando.
+```
+ ssh -v git@heroku.com
+```
+
+Ahora podemos ver pinchando en la imagen como se ha establecido la conexión: 
+
+- [Conexión establecida Heroku-GitHub](http://i60.tinypic.com/2rfc689.png)
 
 ## Documentación:
 
@@ -55,6 +229,13 @@ Para más información sobre el uso de Node.js sobre Heroku, ver estos artículo
 - [Node.js sobre Heroku](https://devcenter.heroku.com/categories/nodejs)
 - [Prácticas recomendadas para el desarrollo en Node.js](https://devcenter.heroku.com/articles/node-best-practices)
 - [Uso WebSockets en Heroku con Node.js](https://devcenter.heroku.com/articles/node-websockets)
+
+Para más información sobre el uso de key entre Heroku y GitHub:
+
+- [Administración de clave SSH Heroku](https://devcenter.heroku.com/articles/keys)
+- [Administración de clave SSH GitHub](http://www.cristalab.com/tutoriales/introduccion-a-github-en-linux-ubuntu-c106086l/)
+- [Administración claves SSH GitHub](https://help.github.com/articles/generating-ssh-keys/)
+- [Administración clves SSH GitHub-Heroku](http://iloo.wordpress.com/2012/06/03/heroku-desplegar-aplicaciones/)
 
 ***********************************************************
 ***********************************************************
