@@ -165,11 +165,16 @@ E inicializamos nuestro proyecto:
 ```
 git init
 ```
-En el caso de que al hacer alguna de estas operaciones de algún tipo de error sobre los permisos, tecleamos lo siguiente:
+Seguidamente escribimos lo siguiente:
 ```
-chmod 7777 -R Proyecto-IV
+git add .
+git commit -am “desp”
+git push heroku master
+git remote -v
+heroku open
 ```
-
+Al escribir heroku open se nos abrirá el proyecto desplegado en un navegador. Este es el resultado:
+<img src="http://i61.tinypic.com/33xbm93.png"></img>
 
 ##Utilización de keys Heroku-Github:
 
