@@ -176,6 +176,29 @@ heroku open
 Al escribir heroku open se nos abrirá el proyecto desplegado en un navegador. Este es el resultado:
 <img src="http://i61.tinypic.com/33xbm93.png"></img>
 
+## Test de carga con Apache-Benchmark:
+
+Lo que vamos a hacer ahora es comprobar el rendimiento del proyecto haciendo uso de Apache-Benchmark. Con el proyecto desplegado en Heroku, vamos a comprobar cómo responde la página web al realizar diversos tests de carga. Posteriormente se realizará un test similar pero con el proyecto desplegado en OpenShift:
+
+Si no tenemos instalado Apache-Benchmark escribimos lo siguiente:
+
+```
+sudo apt-get install apache2-utils
+```
+En nuestro caso, vamos a realizar el test haciendo 200 peticiones con un nivel de concurrencia de 5. En la terminal escribimos:
+
+```
+ab -n200 -c5 https://mighty-taiga-8049.herokuapp.com/
+```
+Y estos son los resultados: <br>
+<img src="http://i60.tinypic.com/nxv1om.png"></img>
+
+Los datos más relevantes son:
+
+<strong>Peticiones por segundo:</strong> Son las peticiones por segundo atendidas durante la prueba. En nuestro caso ha sido de 6.52 por segundo.
+<strong>Tiempo por petición:</strong> Es el tiempo medio que ha empleado el servidor en atender a un grupo de peticiones concurrentes. 767.089 milisegundos ha sido nuestro valor.
+<strong>Tiempo por petición (a través de todas las peticiones concurrentes):</strong> Es el tiempo medio que ha tardado el servidor en atender una petición individual. A nosotros nos ha dado 153.418 milisegundos.
+
 ##Utilización de keys Heroku-Github:
 
 Para tener una mayor sincronización entre nuestro SaaS en este caso Heroku y git vamos a realizar una conexión entre ambos via ssh.
