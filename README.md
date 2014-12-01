@@ -190,13 +190,13 @@ En nuestro caso, vamos a realizar el test haciendo 200 peticiones con un nivel d
 ```
 ab -n200 -c5 https://mighty-taiga-8049.herokuapp.com/
 ```
-Y estos son los resultados: <br>
+Y estos son los resultados:<br>
 <img src="http://i60.tinypic.com/nxv1om.png"></img>
 
 Los datos más relevantes son:
 
-<strong>Peticiones por segundo:</strong> Son las peticiones por segundo atendidas durante la prueba. En nuestro caso ha sido de 6.52 por segundo.
-<strong>Tiempo por petición:</strong> Es el tiempo medio que ha empleado el servidor en atender a un grupo de peticiones concurrentes. 767.089 milisegundos ha sido nuestro valor.
+<strong>Peticiones por segundo:</strong> Son las peticiones por segundo atendidas durante la prueba. En nuestro caso ha sido de 6.52 por segundo.<br>
+<strong>Tiempo por petición:</strong> Es el tiempo medio que ha empleado el servidor en atender a un grupo de peticiones concurrentes. 767.089 milisegundos ha sido nuestro valor.<br>
 <strong>Tiempo por petición (a través de todas las peticiones concurrentes):</strong> Es el tiempo medio que ha tardado el servidor en atender una petición individual. A nosotros nos ha dado 153.418 milisegundos.
 
 ##Utilización de keys Heroku-Github:
