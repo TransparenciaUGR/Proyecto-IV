@@ -248,6 +248,46 @@ Ahora podemos ver pinchando en la imagen como se ha establecido la conexión:
 
 - [Conexión establecida Heroku-GitHub](http://i60.tinypic.com/2rfc689.png)
 
+##Estudio sobre Shippable.
+
+Vamos a realizar un estudio sobre la plataforma shippable, esto nos permitirá más a adelante realizar test para probar la aplicación transparente ugr.
+
+### ¿Por qué Shippable?
+
+En primer lugar y aprovechando el uso GitHub nos hemos decantado por usar Shippable ya que nos permite de una forma fácil y efectiva realizar un build de nuestro proyecto en menos de 30 segundo, sin la necesidad de realizar un registro previo en Shippable (nos sirve la cuenta que
+tenemos en GitHub).
+
+### Test sobre módulos. Integración continua.
+
+Podemos testear los nuevos módulos que se van incorporando a la apliación.
+En la plataforma Transparente-UGR es necesario llevar a cabo una labor de intregración continua ya que el proyecto esta llevado a cabo por cinco personas las cuales se encargarán de ir implementado de forma independiente las diversas funcionalidades con las que contará el proyecto, para ello es necesario disponer de una herramienta como Shippable, con esta herramienta podemos ir probando las funciones más críticas de la aplicación y comprobar mediante la realización de test que la apliación sigue funcionando correctamente despues de haber realizados modificaciones sobre ella. Con esto conseguimos una seguridad extra a la hora de incluir los nuevos módulos desarrollados al servidor donde este alojada la apliación con la garantia de que todo funcionará correctamente.
+
+### Pasos para ejecutar una aplicación en Shippable.
+
+1. En primer lugar es necario identificarse en Shippable, lo podemos hacer usando nuestra cuenta de gitHub.
+
+2. Seleccionamos el respositorio sobre el cuál queremos llevar a cabo la contrucción del proyecto.
+
+3. Es necesario añadir al repositorio sobre el cuál vamos a realizar el build un archivo llamado shippable.yml, aqui pongo un enlace donde podemos ver cual sería el código que contendría el archivo .yml He seleccionado el .yml de node_js ya que es el lenguaje en el que se encuentra desarrollada la apliación de transparente-ugr.
+
+4. Test Visualizations.
+
+5. Run the Build.
+
+6. Visualización de los resultados de la ejecución de la aplicación.
+
+### Pruebas realizadas con Shippable (aplicación de prueba).
+
+<a href="http://es.tinypic.com?ref=29cwe9z" target="_blank"><img src="http://i60.tinypic.com/29cwe9z.png" border="0" alt="Image and video hosting by TinyPic"></a>
+- Imagen 1. Proceso de ejecución de Shippable.
+
+<a href="http://es.tinypic.com?ref=vijyba" target="_blank"><img src="http://i59.tinypic.com/vijyba.png" border="0" alt="Image and video hosting by TinyPic"></a>
+- Imagen 2. Proceso de ejecución test Shippable.
+
+
+
+
+
 ## Documentación:
 
 Para más información sobre el uso de Node.js sobre Heroku, ver estos artículos:
@@ -264,6 +304,11 @@ Para más información sobre el uso de key entre Heroku y GitHub:
 - [Administración de clave SSH GitHub](http://www.cristalab.com/tutoriales/introduccion-a-github-en-linux-ubuntu-c106086l/)
 - [Administración claves SSH GitHub](https://help.github.com/articles/generating-ssh-keys/)
 - [Administración clves SSH GitHub-Heroku](http://iloo.wordpress.com/2012/06/03/heroku-desplegar-aplicaciones/)
+
+Para más información sobre Shippable:
+
+- [GETTING STARTED](http://docs.shippable.com/en/latest/start.html#step-5-run-the-build)
+
 
 ***********************************************************
 ***********************************************************
