@@ -250,7 +250,7 @@ Ahora podemos ver pinchando en la imagen como se ha establecido la conexión:
 
 ##Estudio sobre Shippable.
 
-Vamos a realizar un estudio sobre la plataforma shippable, esto nos permitirá más a adelante realizar test para probar la aplicación transparente ugr.
+Vamos a realizar un estudio sobre la plataforma shippable, esto nos permitirá más adelante realizar test para probar la aplicación transparente ugr.
 
 ### ¿Por qué Shippable?
 
@@ -264,11 +264,11 @@ En la plataforma Transparente-UGR es necesario llevar a cabo una labor de intreg
 
 ### Pasos para ejecutar una aplicación en Shippable.
 
-1. En primer lugar es necario identificarse en Shippable, lo podemos hacer usando nuestra cuenta de gitHub.
+1. En primer lugar es necesario identificarse en Shippable, lo podemos hacer usando nuestra cuenta de gitHub.
 
 2. Seleccionamos el respositorio sobre el cuál queremos llevar a cabo la contrucción del proyecto.
 
-3. Es necesario añadir al repositorio sobre el cuál vamos a realizar el build un archivo llamado shippable.yml, aqui pongo un enlace donde podemos ver cual sería el código que contendría el archivo .yml He seleccionado el .yml de node_js ya que es el lenguaje en el que se encuentra desarrollada la apliación de transparente-ugr.
+3. Es necesario añadir al repositorio sobre el cuál vamos a realizar el build un archivo llamado shippable.yml, aqui pongo un enlace donde podemos ver cual sería el código que contendría el archivo .yml. He seleccionado el .yml de node_js ya que es el lenguaje en el que se encuentra desarrollada la apliación de transparente-ugr.
 
 4. Test Visualizations.
 
@@ -283,10 +283,6 @@ En la plataforma Transparente-UGR es necesario llevar a cabo una labor de intreg
 
 <a href="http://es.tinypic.com?ref=vijyba" target="_blank"><img src="http://i59.tinypic.com/vijyba.png" border="0" alt="Image and video hosting by TinyPic"></a>
 - Imagen 2. Proceso de ejecución test Shippable.
-
-
-
-
 
 ## Documentación:
 
