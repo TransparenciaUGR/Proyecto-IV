@@ -308,7 +308,7 @@ Para más información sobre el uso de key entre Heroku y GitHub:
 Para más información sobre Shippable:
 
 - [GETTING STARTED](http://docs.shippable.com/en/latest/start.html#step-5-run-the-build)
-
+- [CODE SAMPLES](http://docs.shippable.com/en/latest/samples/index.html#samplesref)
 
 ***********************************************************
 ***********************************************************
