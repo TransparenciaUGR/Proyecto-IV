@@ -15,7 +15,6 @@ wget "-----"
 chmod +x scrip_jaula.sh
 
 # Ejecutar la jaula usando el script automático de instalación y ejecución
-
 # Cuando el script llegue al final tendremos la aplicación funcionando sin tener que tocar nada
 
 chroot /home/jaulas/jaula-iv/ < scrip_jaula.sh 
