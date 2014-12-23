@@ -22,3 +22,9 @@ apt-get install -y git
 apt-get install -y wget
 apt-get install -y zip
 apt-get install -y curl
+
+#Accedemos a nuestro directorio home
+cd /home
+
+#Descargamos la apliación
+git clone https://github.com/TransparenciaUGR/Proyecto-IV
