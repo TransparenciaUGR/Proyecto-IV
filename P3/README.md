@@ -7,8 +7,8 @@ La web está publicada en [transparente.ugr.es](http://transparente.ugr.es).
 
 Integrantes del grupo:
 
-Jose Carlos Sánchez Hurtado.
-Alberto Mesa Navarro.
-Jesus Navarro Guzmán.
-Marcos Jiménez Fernández.
-Francico Toranzo Santiago.
+Jose Carlos Sánchez Hurtado.<br>
+Alberto Mesa Navarro.<br>
+Jesus Navarro Guzmán.<br>
+Marcos Jiménez Fernández.<br>
+Francico Toranzo Santiago.<br>
