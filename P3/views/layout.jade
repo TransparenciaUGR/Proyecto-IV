@@ -1,0 +1,145 @@
+doctype html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
+//	
+	Portal web transparente.ugr.es para publicar datos de la Universidad de Granada
+	Copyright (C) 2014  Jaime Torres Benavente
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+html(xmlns="http://www.w3.org/1999/xhtml", lang="es", xml:lang="es")
+	head
+		title UGR transparente | Universidad de Granada
+		meta(http-equiv="Content-Type", content="text/html; charset=UTF-8")
+		meta(name="description", content="Universidad de Granada - UGR transparente")
+		meta(name="keywords", content="universidad,granada,UGR transparente")
+		meta(http-equiv="content-language", name="language", content="es")
+		link(rel="shortcut icon", href="/img/general/favicon.ico", type="image/vnd.microsoft.icon")
+		link(rel="icon", href="/img/general/favicon.ico", type="image/vnd.microsoft.icon")
+		link(rel="stylesheet", id="css-style", type="text/css", href="css/style.css", media="all")
+		link(rel="stylesheet", id="css-style2", type="text/css", href="css/style2.css", media="all")
+		
+		link(rel="stylesheet", type="text/css", href="css/font-awesome.min.css", media="all")
+
+		script(type='text/javascript').
+			function mostrar_menu_administracion(){
+				var menu=document.getElementById("menu_administracion");
+				if(menu.style.display == "none"){
+					menu.style.display = "block";
+				}else
+					menu.style.display = "none";
+			}
+
+			function mostrar_menu_docencia(){
+				var menu=document.getElementById("menu_docencia");
+				if(menu.style.display == "none"){
+					menu.style.display = "block";
+				}else
+					menu.style.display = "none";
+			}
+
+			function mostrar_menu_gestion(){
+				var menu=document.getElementById("menu_gestion");
+				if(menu.style.display == "none"){
+					menu.style.display = "block";
+				}else
+					menu.style.display = "none";
+			}
+
+			function mostrar_menu_normativas(){
+				var menu=document.getElementById("menu_normativas");
+				if(menu.style.display == "none"){
+					menu.style.display = "block";
+				}else
+					menu.style.display = "none";
+			}
+
+
+		if seccion!=="Inicio"
+
+			script(src="http://code.jquery.com/jquery-1.11.0.min.js")
+
+			script(type='text/javascript' src='https://www.google.com/jsapi')
+
+			script(src="http://jquery-csv.googlecode.com/git/src/jquery.csv.js")
+
+			script(src="script/generar_tabla.js")
+
+	body
+		div(id="boxes")
+			div(id="dialog" class="window" hidden)
+				img(id="close",src="imagenes/close.png", alt="close")
+				h1#titulo_tabla
+				div(id="tabla")
+			div(id="mask")
+		div(id="contenedor_margenes" class="")
+			div(id="contenedor" class="")
+				div(id="cabecera" class="")
+					h1#cab_inf UGR Transparente
+					a(href="http://www.ugr.es" id="enlace_ugr") Universidad de Granada
+					span.separador_enlaces |
+					a(href="/" id="enlace_stack") Vicerrectorado de Estudiantes
+					span.separador_enlaces |
+					a(href="http://www.ugr.es/pages/administracion" id="enlace_eadministracion") Administración electrónica
+
+					div#buscador(hidden)
+						h2 Buscar
+						form(action="formulario_buscar" class="mod-buttons")
+							#formulario_buscar.mod-buttons
+								#buscador-input
+									label(id="buscar" for="sq")
+										input(class="with_default_value" type="text" name="query" id="sq" value="búsqueda...")
+									label(id="enviar_buscar" for="submit_buscar")
+										input(type="image" src="./img/transp.gif" alt="iniciar búsqueda" name="submit" id="submit_buscar" class="image-buscar")
+					
+				block content
+
+				
+
+				#banners
+					.mod-banners
+						ul
+							li(class="banner_container model-resaltado-02 showtext")
+								a(class="banner", href="http://opendata.ugr.es")
+									strong Portal opendata de la UGR
+									p(class="texto_banner") opendata.ugr.es es un portal para la publicación y consulta de datos abiertos de la UGR
+
+
+							li(class="banner_container model-resaltado-02 showtext")
+								a(class="banner", href="http://secretariageneral.ugr.es/")
+									strong Secretaría General
+									p(class="texto_banner") Ver el portal de la Secretaría General de la Universidad de Granada
+		
+
+							li(class="banner_container model-resaltado-02 showtext")
+								a(class="banner", href="https://docs.google.com/document/d/1mIrZYU4c6fNUUxnUQysuDhJ7SQtKw22s4WfeyUnZ4Cg/edit#heading=h.4a0kngg63a7l")
+									strong Hacia una Universidad Abierta
+									p(class="texto_banner") Ir al documento
+				
+
+				#interior_pie
+					#pie
+						a(id="WAI", href="http://www.w3.org/WAI/WCAG2AA-Conformance")
+							img(src="imagenes/wcag2aa.gif", id="wcag2aa", alt="wcag2aa")
+						//a(class="cmswebmap", href="#") Mapa del sitio
+						span.separador_enlaces  | 
+						a(class="contactar", href="http://www.ugr.es/pages/contacto", target="_blank") Contacto
+						//span.separador_enlaces  | 
+						//a(class="validador", href="#") Accesibilidad
+						//span.separador_enlaces  | 
+						//a(class="privacidad", href="#") Política de privacidad
+						p
+							a(href="http://www.ugr.es/pages/creditos") &copy; 2014
+							span.separador_enlaces | 
+							a(href="http://www.ugr.es") Universidad de Granada
+
+
