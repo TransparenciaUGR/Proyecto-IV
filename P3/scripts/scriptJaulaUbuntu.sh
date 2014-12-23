@@ -15,3 +15,10 @@ sudo chroot /home/jaulas/saucy32/
 
 #Montamos el sistema
 mount -t proc /proc
+
+#Insaltalamos las herramientas necesarias para ejecutar la aplicación
+
+apt-get install -y git
+apt-get install -y wget
+apt-get install -y zip
+apt-get install -y curl
