@@ -20,5 +20,5 @@ cd Proyecto-IV
 git pull
 cd P3
 
-chmod +x run.sh
-sh run.sh
+chmod +x lanzarTransparente.sh
+sh lanzarTransparente.sh
