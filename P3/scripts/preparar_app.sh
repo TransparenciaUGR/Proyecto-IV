@@ -10,7 +10,11 @@ apt-get install -y wget
 apt-get install -y zip
 apt-get install -y git
 
-git clone https://github.com/TransparenciaUGR/Proyecto-IV
+#Puede darse el caso de que el repositorio ya esté clonado. Para no tener que realizar la clonación en cada paso podemos hacer
+#un simple if que comprueba si la carpeta de clonación ha sido creada.
+if [ ! -d Proyecto-IV ]; then
+	git clone https://github.com/TransparenciaUGR/Proyecto-IV
+fi
 
 cd Proyecto-IV
 git pull
