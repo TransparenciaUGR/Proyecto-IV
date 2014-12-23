@@ -15,4 +15,4 @@ wget https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/P3/scripts/prep
 chmod +x preparar_app.sh
 
 # Ejecutamos la jaula usando el script. Una vez hecho esto ya tendremos nuestra aplicación funcionando.
-chroot /home/jaulas/jaula-iv/ < scrip_jaula.sh 
+chroot /home/jaulas/jaula-iv/ < script_jaula.sh 
