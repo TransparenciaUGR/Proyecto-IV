@@ -14,3 +14,9 @@ sudo rm /var/run/docker.pid
 
 docker -d &
 
+#Instalación de la imagen del contenedor, en este caso hemos elegido ubuntu
+docker pull ubuntu
+
+#Entramos en el contenedor e intalamos lo que vamos a necesitar
+sudo docker run -i -t ubuntu /bin/sh -c "apt-get install -y wget; "
+
