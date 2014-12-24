@@ -74,9 +74,41 @@ Instalación de la imagen del contenedor, en este caso hemos elegido ubuntu
 docker pull ubuntu
 ```
 
-Entramos en el contenedor e intalamos lo que vamos a necesitar
+##Preparar jaula sin Docker
+
+Instalamos debootstrap, programa para crear jaulas
 
 ```shell
-sudo docker run -i -t ubuntu /bin/sh -c "apt-get install -y wget; "
+apt-get install debootstrap
 ```
 
+Creamos el repositorio donde se almacenaran las jaula
+
+```shell
+mkdir /home/jaulas
+debootstrap --arch=amd64 trusty /home/jaulas/jaula-iv/ http://archive.ubuntu.com/ubuntu
+```
+
+Preparar el entorno para la app y la ejecutamos
+
+```shell
+apt-get install -y curl
+apt-get install -y wget
+apt-get install -y zip
+apt-get install -y git
+```
+
+Puede darse el caso de que el repositorio ya esté clonado. Para no tener que realizar la clonación en cada paso podemos hacer un simple if que comprueba si la carpeta de clonación ha sido creada.
+
+```shell
+if [ ! -d Proyecto-IV ]; then
+	git clone https://github.com/TransparenciaUGR/Proyecto-IV
+fi
+
+cd Proyecto-IV
+git pull
+cd P3
+
+chmod +x lanzarTransparente.sh
+sh lanzarTransparente.sh
+```
