@@ -46,3 +46,37 @@ EXPOSE 3000
 RUN cd /home; npm install; npm install -g mocha;npm install mocha chai supertest
 CMD ["nohup","/usr/bin/nodejs", "ugr-transparente-servidor/lanzarTransparente.sh"]
 ```
+
+##Instalar Docker
+
+En primer lugar actualizamos los repositorios e instalamos docker. Lo hacemos con:
+
+```shell
+sudo apt-get update
+sudo apt-get install -y docker.io
+```
+
+Es posible que al ejecutar docker nos de un error con el fichero docker.pid. Para ello, tenemos que eliminarlo de la siguiente forma:
+
+```shell
+sudo rm /var/run/docker.pid
+```
+
+Ahora sí, ejecutamos docker:
+
+```shell
+docker -d &
+```
+
+Instalación de la imagen del contenedor, en este caso hemos elegido ubuntu
+
+```shell
+docker pull ubuntu
+```
+
+Entramos en el contenedor e intalamos lo que vamos a necesitar
+
+```shell
+sudo docker run -i -t ubuntu /bin/sh -c "apt-get install -y wget; "
+```
+
