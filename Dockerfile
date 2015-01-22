@@ -10,6 +10,7 @@ RUN echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen
 RUN sudo apt-get update
 RUN sudo apt-get install -y mongodb-org
 RUN git clone https://github.com/TransparenciaUGR/Proyecto-IV.git
+RUN cd Proyecto-IV
 RUN cd P3
 RUN npm install
 RUN node app.js
