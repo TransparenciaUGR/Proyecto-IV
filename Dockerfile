@@ -1,7 +1,7 @@
 FROM ubuntu
 
 #RUN sudo apt-get install -y g++
-RUN sudo apt-get install -y -q g++
+RUN sudo apt-get install -y build-essential g++
 RUN sudo apt-get install -y curl
 RUN sudo apt-get install -y git
 RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
