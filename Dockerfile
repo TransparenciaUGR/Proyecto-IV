@@ -11,8 +11,8 @@ RUN sudo apt-get update
 RUN sudo apt-get install -y mongodb-org
 RUN sudo apt-get install -y firefox
 RUN git clone https://github.com/TransparenciaUGR/Proyecto-IV.git
-RUN cd Proyecto-IV
-RUN cd P3
+RUN cd Proyecto-IV/P3
+#RUN cd P3
 RUN npm install
 RUN node app.js
 RUN firefox localhost:3000
