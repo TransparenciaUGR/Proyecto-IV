@@ -13,9 +13,9 @@ RUN sudo apt-get update
 RUN sudo apt-get install -y mongodb-org
 RUN sudo apt-get install -y firefox
 RUN git clone https://github.com/TransparenciaUGR/Proyecto-IV.git
-RUN cd Proyecto-IV/P3 && npm install
-RUN cd Proyecto-IV/P3 && npm install -g mocha
-RUN cd Proyecto-IV/P3 && npm install mocha chai supertest
+RUN cd Proyecto-IV && npm install
+RUN cd Proyecto-IV && npm install -g mocha
+RUN cd Proyecto-IV && npm install mocha chai supertest
 
 #COPY package.json /home/
 #EXPOSE 3000
