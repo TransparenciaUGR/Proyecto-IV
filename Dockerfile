@@ -1,6 +1,5 @@
 FROM ubuntu
 
-#RUN sudo apt-get install -y g++
 RUN sudo apt-get update
 RUN sudo apt-get install -y g++
 RUN sudo apt-get install -y curl
@@ -15,7 +14,5 @@ RUN sudo apt-get install -y mongodb-org
 RUN sudo apt-get install -y firefox
 RUN git clone https://github.com/TransparenciaUGR/Proyecto-IV.git
 RUN cd Proyecto-IV/P3 && npm install
-#RUN cd P3
-#RUN npm install
 RUN cd Proyecto-IV/P3 && node app.js
-RUN firefox localhost:3000
+#RUN firefox localhost:3000
