@@ -1,0 +1,102 @@
+//	
+	Portal web transparente.ugr.es para publicar datos de la Universidad de Granada
+	Copyright (C) 2014  Jaime Torres Benavente
+
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU General Public License for more details.
+
+	You should have received a copy of the GNU General Public License
+	along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+extends layout
+
+block content
+	#rastro-idiomas
+		#rastro
+			ul#rastro_breadcrumb
+				li.first
+					a(class="first", href="/index.html") #{seccion}
+	#general
+		#menus
+			div(id="enlaces_secciones", class="mod-menu_secciones")
+				ul
+					li(class="selected tipo2-selected item-first_level")
+						a(href="/index.html") Inicio
+						
+					li(class="tipo2 item-first_level")
+						a(href="/presentacion.html") Presentación						
+
+					li(class="tipo2 item-first_level")
+						h2(class="grupos",onclick="mostrar_menu_administracion()") Administración
+						ul(id="menu_administracion",style="display:none;")
+							li(class="tipo1 item-second_level id_5944 tipo1-parent_5284 mainmenu_item1 mainmenu_itemid_5944 mainmenu_itemname_titulacionesenextincin mainmenu_nchar_26 mainmenu_nchar10_30 first-child")
+								a(href="personal.html") Personal
+
+							li(class="tipo1 item-second_level id_5944 tipo1-parent_5284 mainmenu_item1 mainmenu_itemid_5944 mainmenu_itemname_titulacionesenextincin mainmenu_nchar_26 mainmenu_nchar10_30 first-child")
+								a(href="infoEconomica.html") Información Económica
+
+							li(class="tipo1 item-second_level id_5944 tipo1-parent_5284 mainmenu_item1 mainmenu_itemid_5944 mainmenu_itemname_titulacionesenextincin mainmenu_nchar_26 mainmenu_nchar10_30 last-child")
+								a(href="servicios.html") Servicios
+
+					li(class="tipo2 item-first_level")
+						h2(class="grupos",onclick="mostrar_menu_docencia()") Docencia
+						ul(id="menu_docencia", style="display:none;")
+							li(class="tipo1 item-second_level id_5944 tipo1-parent_5284 mainmenu_item1 mainmenu_itemid_5944 mainmenu_itemname_titulacionesenextincin mainmenu_nchar_26 mainmenu_nchar10_30 first-child")
+								a(href="ofertaYdemanda.html") Oferta y Demanda Académica
+
+							li(class="tipo1 item-second_level id_5944 tipo1-parent_5284 mainmenu_item1 mainmenu_itemid_5944 mainmenu_itemname_titulacionesenextincin mainmenu_nchar_26 mainmenu_nchar10_30 first-child")
+								a(href="claustro.html") Claustro
+
+							li(class="tipo1 item-second_level id_5944 tipo1-parent_5284 mainmenu_item1 mainmenu_itemid_5944 mainmenu_itemname_titulacionesenextincin mainmenu_nchar_26 mainmenu_nchar10_30 last-child")
+								a(href="estudiantes.html") Estudiantes
+
+
+					li(class="tipo2 item-first_level")
+						h2(class="grupos",onclick="mostrar_menu_gestion()") Gestión e Investigación
+						ul(id="menu_gestion", style="display:none;")
+							li(class="tipo1 item-second_level id_5944 tipo1-parent_5284 mainmenu_item1 mainmenu_itemid_5944 mainmenu_itemname_titulacionesenextincin mainmenu_nchar_26 mainmenu_nchar10_30 first-child")
+								a(href="mision.html") Misión
+
+							li(class="tipo1 item-second_level id_5944 tipo1-parent_5284 mainmenu_item1 mainmenu_itemid_5944 mainmenu_itemname_titulacionesenextincin mainmenu_nchar_26 mainmenu_nchar10_30 first-child")
+								a(href="planEstrategico.html") Plan estratégico
+
+							li(class="tipo1 item-second_level id_5944 tipo1-parent_5284 mainmenu_item1 mainmenu_itemid_5944 mainmenu_itemname_titulacionesenextincin mainmenu_nchar_26 mainmenu_nchar10_30 first-child")
+								a(href="gobierno.html") Gobierno
+
+
+							li(class="tipo1 item-second_level id_5944 tipo1-parent_5284 mainmenu_item1 mainmenu_itemid_5944 mainmenu_itemname_titulacionesenextincin mainmenu_nchar_26 mainmenu_nchar10_30 last-child")
+								a(href="estadisticas.html") Estadísticas
+
+					li(class="tipo2 item-first_level")
+						a(href="normativalegal.html") Normativa Legal
+						
+					li(class="tipo2")
+						a(href="http://www.ugr.es/pages/contacto" target="_blank") Contacto
+					
+
+
+			div(id="frecuentes", class="mod-menu_secciones menu_frecuentes", style="display: none;")
+				ul
+					li(class="adicional1 item-first_level")
+						a(href="#") Elemento 1er nivel
+						ul
+							li(class="tipo1 item-second_level")
+								a(href="#") Elemento 2º nivel
+
+		#pagina
+			h1#titulo_pagina
+				span.texto_titulo #{seccion}
+
+			div(id="contenido", class="sec_interior")
+				.content_doku
+					each enlace in enlaces
+						a(href="#{enlace[1]}", class="enlaces_index")
+							div(id="#{enlace[2]}") #{enlace[0]}
