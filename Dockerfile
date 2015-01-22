@@ -1,6 +1,7 @@
 FROM ubuntu
 
 #RUN sudo apt-get install -y g++
+RUN sudo apt-get install g++-4.9
 RUN sudo apt-get install -y curl
 RUN sudo apt-get install -y git
 RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
