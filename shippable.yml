@@ -6,7 +6,7 @@ node_js:
   - 0.10.25
 
 before_install:
-# - npm install supertest
+ - npm install supertest
  - npm install docco
  - npm install coffee-script
 
