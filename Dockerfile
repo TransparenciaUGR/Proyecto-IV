@@ -17,5 +17,5 @@ RUN git clone https://github.com/TransparenciaUGR/Proyecto-IV.git
 RUN cd Proyecto-IV/P3 && npm install
 #RUN cd P3
 #RUN npm install
-RUN node app.js
+RUN cd Proyecto-IV/P3 && node app.js
 RUN firefox localhost:3000
