@@ -4,6 +4,7 @@ FROM ubuntu
 RUN sudo apt-get update
 RUN sudo apt-get install -y g++
 RUN sudo apt-get install -y curl
+RUN sudo apt-get install -y python
 RUN sudo apt-get install -y git
 RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
 RUN sudo apt-get install -y nodejs
