@@ -27,6 +27,9 @@ RUN git clone https://github.com/TransparenciaUGR/Proyecto-IV.git
 RUN cd Proyecto-IV && npm install
 RUN cd Proyecto-IV && npm install -g grunt-cli
 RUN cd Proyecto-IV && npm install -g grunt-contrib-clean --save-dec
+RUN cd Proyecto-IV && npm install -g grunt-contrib-copy --save-dec
+RUN cd Proyecto-IV && npm install -g grunt-blanket --save-dec
+RUN cd Proyecto-IV && npm install -g grunt-coveralls --save-dec
 RUN cd Proyecto-IV && npm install -g mocha
 RUN cd Proyecto-IV && npm install mocha chai supertest
 #Solucionando erro en Shippable al intentar conectat con base de datos
