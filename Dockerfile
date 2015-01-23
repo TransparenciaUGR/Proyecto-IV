@@ -19,7 +19,7 @@ RUN sudo apt-get install -y mongodb-org
 RUN     apt-get install -y x11vnc xvfb firefox
 RUN     mkdir /.vnc
 # Password:
-RUN     x11vnc -storepasswd 1234 ~/.vnc/passwd
+#RUN     x11vnc -storepasswd 1234 ~/.vnc/passwd
 # Autostart firefox
 #RUN     bash -c 'echo "firefox" >> /.bashrc'
 RUN git clone https://github.com/TransparenciaUGR/Proyecto-IV.git
