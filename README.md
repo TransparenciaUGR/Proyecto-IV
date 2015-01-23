@@ -7,6 +7,13 @@ Proyecto elegido: Infraestructura virtual para transparencia.
 
 Creación de infraestructura virtual para transparencia.ugr.es, con creación de tests para el código, integración continua, descripción de configuración mediante Chef o Ansible y configuración del despliegue automático del mismo en cualquier servicio.
 
+[Para Desplegar, sencillamente descargar este script y ejecutar desde terminal con: ](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/IniciarDespliegue)
+
+```sh
+chmod +x IniciarDespliegue
+./IniciarDespliegue
+```
+
 Portal de transaparencia de la [UGR](http://www.ugr.es/) para públicar los datos y hacerlos accesibles y tratables. La aplicación web está diseñada en [node.js](http://nodejs.org/) junto con [express](http://expressjs.com/) y [jade](http://jade-lang.com/). [Express](http://expressjs.com/) es un framwork para desarrollar aplicaciones web mientras que [jade](http://jade-lang.com/) es un modulo para trabajar con plantillas y poder implementar la arquitectura Model Vista Controlador.
 
 La web está publicada en [transparente.ugr.es](http://transparente.ugr.es).
