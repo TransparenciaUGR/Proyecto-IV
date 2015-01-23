@@ -80,7 +80,9 @@ Una vez hecho esto, para poder iniciar MongoDB se debe ejecutar en otra terminal
 
 Ahora desde otra terminal, podemos entrar al shell de MongoDB y comprobar que la base de datos se ha creado correctamente. Para ello ejecutamos el comando <b>mongo</b>:
 
-```shell $ mongo MongoDB shell version: 2.4.1 connecting to: test```
+```shell 
+mongo MongoDB shell version: 2.4.1 connecting to: test
+```
 
 use shows switched to db shows show dbs local 0.078125GB shows (empty) 
 
@@ -100,7 +102,9 @@ La aplicación se ha creado apoyada por el siguiente artículo: [Empezando a usa
 ##Ejecución Local:##
 Se necesita instalar [Node.js](http://nodejs.org/) y las herramientas asociadas de Heroku: [Heroku Toolbelt:](https://toolbelt.heroku.com/)
 
-```shell git clone git@github.com:heroku/node-js-getting-started.git``` 
+```shell 
+git clone git@github.com:heroku/node-js-getting-started.git
+``` 
 
 o clonar fork propio
 
@@ -117,39 +121,55 @@ Una vez realizada la ejecución local, la aplicación puede verse en [localhost:
 ##Despliegue en Heroku:##
 Vamos a realizar el despliegue de la aplicación una vez testeado un despligue de una aplicación básica en Heroku. Para ello, lo primero que tenemos que hacer es clonar el repositorio que vamos a desplegar a nuestra máquina. Lo hacemos así:
 
-```shell git clone https://github.com/TransparenciaUGR/Proyecto-IV.git ```
+```shell 
+git clone https://github.com/TransparenciaUGR/Proyecto-IV.git
+```
 
 El repositorio se descargará a nuestra máquina. Ahora nos movemos a esta carpeta:
 
-```shell cd Proyecto-IV ```
+```shell 
+cd Proyecto-IV 
+```
 
 Es necesario instalar Heroku en Ubuntu, por ello, lo hacemos con el siguiente comando:
 
-```shell wget https://toolbelt.heroku.com/install-ubuntu.sh | sh chmod 777 install-ubuntu.sh ./install-ubuntu```
+```shell 
+wget https://toolbelt.heroku.com/install-ubuntu.sh | sh chmod 777 install-ubuntu.sh ./install-ubuntu
+```
 
 Podemos ver que lo tenemos instalado con: 
 
-```shell heroku --version```
+```shell 
+heroku --version
+```
 
 En mi caso:<br> <img src="http://i60.tinypic.com/2hhkdpg.png"></img>
 
 Hecho esto, tenemos que crearnos una cuenta en Heroku porque la necesitaremos para desplegar el proyecto. Hecho esto, entramos a Heroku en Ubuntu haciendo:
 
-```shell heroku login ```
+```shell 
+heroku login 
+```
 
 Y seguidamente introducimos nuestros credenciales: <img src="http://i60.tinypic.com/25qysye.png"></img>
 
 Ahora, dentro de la carpeta de nuestro proyecto, hacemos lo siguiente: 
 
-``` shell heroku create````
+``` shell 
+heroku create
+````
 
 E inicializamos nuestro proyecto: 
 
-```shell git init```` 
+```shell 
+git init
+```
 
 Seguidamente escribimos lo siguiente:
 
-```shell git add . git commit -am “desp” git push heroku master git remote -v heroku open````
+```shell 
+git add . git commit -am “desp” git push heroku master git remote -v heroku open
+```
 
 Al escribir heroku open se nos abrirá el proyecto desplegado en un navegador. Este es el resultado: <img src="http://i61.tinypic.com/33xbm93.png"></img>
 
@@ -158,11 +178,15 @@ Lo que vamos a hacer ahora es comprobar el rendimiento del proyecto haciendo uso
 
 Si no tenemos instalado Apache-Benchmark escribimos lo siguiente:
 
-```shell sudo apt-get install apache2-utils````
+```shell 
+sudo apt-get install apache2-utils
+```
 
 En nuestro caso, vamos a realizar el test haciendo 200 peticiones con un nivel de concurrencia de 5. En la terminal escribimos:
 
-```shell ab -n200 -c5 https://mighty-taiga-8049.herokuapp.com/```
+```shell 
+ab -n200 -c5 https://mighty-taiga-8049.herokuapp.com/
+```
 
 Y estos son los resultados:<br> <img src="http://i60.tinypic.com/nxv1om.png"></img>
 
@@ -177,11 +201,15 @@ Para ello es necesario realizar una serie de pasos los cuales vamos a detallar a
 
 En primer lugar generamos un archivo id_rsa.pub ejecutando el siguiente comando en la terminal:
 
-```shell ssh-keygen```
+```shell 
+ssh-keygen
+```
 
 Una vez generado el archivo correspondiente escrbimos en la terminal lo siguiente:
 
-```shell cat ~/.ssh/id_rsa.pub```
+```shell 
+cat ~/.ssh/id_rsa.pub
+```
 
 Esto nos genera un tipo de cifrado el cual tenemos que añadir tanto a Heroku como a github.
 
