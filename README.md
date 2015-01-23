@@ -26,13 +26,6 @@ Jesus Navarro Guzmán.<br>
 Marcos Jiménez Fernández.<br>
 Francico Toranzo Santiago.<br>
 
-##¿Qué es Heroku?##
-Es un servicio de Hosting en la nube. Esto ayuda a que los clientes no tienen que contar con infraestructura, el tiempo de procesamiento y almacenamiento, si no que todo esto se le renta a un tercero. Es un servicio gratuito hasta los 5 MB de espacio para base de datos y 50 MB para los archivos incluyendo repositorios Git. Es un servicio basado en la nube de Amazon Web Services. La implementación de este servicio se hace a través de GIT y se instala a través de un gem.
-
-Las ventajas que nos ofrece usar Heroku es que podemos olvidarnos de usar servidores, pudiendo enfocarnos en la aplicación que queremos desplegar, y es gratuita en cierto modo, puesto que sí se sobrepasan los límites anteriormente mencionados se empezará a pagar una cuota. Heroku puede trabajar con con MySQL, SQLite, PostgreSQL, MongoDB, CouchDB y Memcache a través de un tercero Mongo HQ y Cloudant añadidos como add-ons.
-
-Para el caso de nuestra aplicación para trasnparente ugr, utilizaremos la base de datos MongoDB aunque aún no está implementada en la aplicación de ejemplo. Ya que para poder añadirla nos pide la verificación de cuenta con la tarjeta de crédito y tenemos dudas sobre ello.
-
 ##¿Qué es transparenteUGR?##
 <b>transparente.ugr</b> es un portal web dedicado a ofrecer información a la sociedad y en particular a la Comunidad Universitaria, teniendo como objetivo el libre acceso y veracidad de esa información.
 
@@ -47,6 +40,13 @@ Su funcionalidad de podría dividir en:
 <b>Gestión e investigación:</b> información relacionada con la <i>Misión de la universidad</i>, <i>Plan estratégico</i> para hacer operativa dicha misión, composición del gobierno y estatutos de la universidad, etc.
 
 Y un apartado que incluye la Normativa Legal que rige en la Ley de transparencia, normativas y convenios.
+
+##¿Qué es Heroku?##
+Es un servicio de Hosting en la nube. Esto ayuda a que los clientes no tienen que contar con infraestructura, el tiempo de procesamiento y almacenamiento, si no que todo esto se le renta a un tercero. Es un servicio gratuito hasta los 5 MB de espacio para base de datos y 50 MB para los archivos incluyendo repositorios Git. Es un servicio basado en la nube de Amazon Web Services. La implementación de este servicio se hace a través de GIT y se instala a través de un gem.
+
+Las ventajas que nos ofrece usar Heroku es que podemos olvidarnos de usar servidores, pudiendo enfocarnos en la aplicación que queremos desplegar, y es gratuita en cierto modo, puesto que sí se sobrepasan los límites anteriormente mencionados se empezará a pagar una cuota. Heroku puede trabajar con con MySQL, SQLite, PostgreSQL, MongoDB, CouchDB y Memcache a través de un tercero Mongo HQ y Cloudant añadidos como add-ons.
+
+Para el caso de nuestra aplicación para trasnparente ugr, utilizaremos la base de datos MongoDB aunque aún no está implementada en la aplicación de ejemplo. Ya que para poder añadirla nos pide la verificación de cuenta con la tarjeta de crédito y tenemos dudas sobre ello.
 
 ##MongoDB##
 En este apartado vamos a indicar como crear y usar una base de datos para nuestro proyecto usando <b>MongoDB</b>.
