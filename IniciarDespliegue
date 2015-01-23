@@ -1,13 +1,23 @@
 #!/bin/bash
+sudo apt-get update
+apt-get install -y curl
+apt-get install -y wget
+apt-get install -y zip
+apt-get install -y git
 clear
 echo "Bienvenido al portal de Transparencia de la UGR"
+
+if [ ! -d Proyecto-IV ]; then
+	git clone https://github.com/TransparenciaUGR/Proyecto-IV
+fi
+cd Proyecto-IV
+git pull
 
 sudo apt-get update
 sudo apt-get install -y docker.io
 
 sudo rm /var/run/docker.pid
 docker -d &
-
 
 sudo docker pull am83/proyecto-iv
 sudo docker run -t -i am83/proyecto-iv:latest /bin/bash
