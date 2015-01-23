@@ -17,7 +17,7 @@ RUN sudo apt-get install -y mongodb-org
  # vnc, xvfb (falso display) y firefox
 RUN     apt-get install -y x11vnc xvfb firefox
 #RUN sudo apt-get install -y gnome-shell
-RUN sudo apt-get install -y kubuntu-desktop
+#RUN sudo apt-get install -y kubuntu-desktop
 #RUN     mkdir /.vnc
 # Password:
 #RUN     x11vnc -storepasswd 1234 ~/.vnc/passwd
