@@ -7,6 +7,7 @@ RUN sudo apt-get install -y python
 RUN sudo apt-get install -y git
 RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
 RUN sudo apt-get install -y nodejs
+RUN sudo apt-get install -y gnome-core xfce4 firefox #Ver portal web desde firefox
 RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 RUN echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
 RUN sudo apt-get update
