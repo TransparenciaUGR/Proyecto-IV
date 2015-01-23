@@ -14,8 +14,6 @@ RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 RUN echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
 RUN sudo apt-get update
 RUN sudo apt-get install -y mongodb-org
-#Solucionando erro en Shippable al intentar conectat con base de datos
-RUN cd Proyecto-IV && start mongod
 #RUN sudo apt-get install -y firefox
  # vnc, xvfb (falso display) y firefox
 RUN     apt-get install -y x11vnc xvfb firefox
@@ -29,6 +27,8 @@ RUN cd Proyecto-IV && npm install
 RUN cd Proyecto-IV && npm install -g grunt-cli
 RUN cd Proyecto-IV && npm install -g mocha
 RUN cd Proyecto-IV && npm install mocha chai supertest
+#Solucionando erro en Shippable al intentar conectat con base de datos
+RUN cd Proyecto-IV && start mongod
 
 #COPY package.json /home/
 #EXPOSE 3000
