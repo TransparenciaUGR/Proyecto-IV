@@ -1,0 +1,15 @@
+#!/bin/bash
+clear
+echo "Bienvenido al portal de Transparencia de la UGR"
+
+sudo apt-get update
+sudo apt-get install -y docker.io
+
+sudo rm /var/run/docker.pid
+docker -d &
+
+
+sudo docker pull am83/proyecto-iv
+sudo docker run -t -i am83/proyecto-iv:latest /bin/bash
+
+
