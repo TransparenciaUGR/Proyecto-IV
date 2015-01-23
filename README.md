@@ -4,23 +4,6 @@ ugr-transparente
 Repositorio para el proyecto de la asignatura "Infraestructuras Virtuales"
 
 Proyecto elegido: Infraestructura virtual para transparencia.
-[Despliegue en Heroku:](https://transparente-ugr.herokuapp.com/) Podemos ver transparente-ugr desplegado en un PAAS.
-Despliegue en Docker:
-
-```shell 
-sudo rm /var/run/docker.pid 
-sudo docker -d &
-sudo docker pull am83/proyecto-iv
-#Si queremos ver las imagenes
-sudo docker images
-#Para ejecutar
-sudo docker run -t -i am83/proyecto-iv:master /bin/bash
-```
-Aquí podemos ver los comandos ejecutados y funcionando:
-
-![Captura](https://cloud.githubusercontent.com/assets/8874620/5859211/f1ef8ad0-a258-11e4-9f35-f2c8b735f53e.png)
-![Captura2](https://cloud.githubusercontent.com/assets/8874620/5859424/5e88a158-a25a-11e4-863a-0233668a822d.png)
-![Captura3](https://cloud.githubusercontent.com/assets/8873210/5872668/3ce765a4-a2ee-11e4-9521-2f058c90d263.PNG)
 
 Creación de infraestructura virtual para transparencia.ugr.es, con creación de tests para el código, integración continua, descripción de configuración mediante Chef o Ansible y configuración del despliegue automático del mismo en cualquier servicio.
 
@@ -171,7 +154,9 @@ Seguidamente escribimos lo siguiente:
 git add . git commit -am “desp” git push heroku master git remote -v heroku open
 ```
 
-Al escribir heroku open se nos abrirá el proyecto desplegado en un navegador. Este es el resultado: <img src="http://i61.tinypic.com/33xbm93.png"></img>
+Al escribir heroku open se nos abrirá el proyecto desplegado en un navegador. 
+
+[Despliegue en Heroku:](https://transparente-ugr.herokuapp.com/) Podemos ver transparente-ugr desplegado en un PAAS.
 
 ##Test de carga con Apache-Benchmark:##
 Lo que vamos a hacer ahora es comprobar el rendimiento del proyecto haciendo uso de Apache-Benchmark. Con el proyecto desplegado en Heroku, vamos a comprobar cómo responde la página web al realizar diversos tests de carga. Posteriormente se realizará un test similar pero con el proyecto desplegado en OpenShift:
@@ -242,6 +227,23 @@ Ahora podemos ver pinchando en la imagen como se ha establecido la conexión:
 ##¿Qué es Docker?##
 
 Docker es un proyeto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores software, proporcionando una capa adicional de abstracción y automatización de la virtualización a nivel de sistema operativo de Linux. Docker utiliza características de aislamiento de recursos del kernel de Linux, como cgroups.
+
+Despliegue en Docker:
+
+```shell 
+sudo rm /var/run/docker.pid 
+sudo docker -d &
+sudo docker pull am83/proyecto-iv
+#Si queremos ver las imagenes
+sudo docker images
+#Para ejecutar
+sudo docker run -t -i am83/proyecto-iv:master /bin/bash
+```
+Aquí podemos ver los comandos ejecutados y funcionando:
+
+![Captura](https://cloud.githubusercontent.com/assets/8874620/5859211/f1ef8ad0-a258-11e4-9f35-f2c8b735f53e.png)
+![Captura2](https://cloud.githubusercontent.com/assets/8874620/5859424/5e88a158-a25a-11e4-863a-0233668a822d.png)
+![Captura3](https://cloud.githubusercontent.com/assets/8873210/5872668/3ce765a4-a2ee-11e4-9521-2f058c90d263.PNG)
 
 ##¿Por qué usamos Docker?##
 + Es fácil de instalar
