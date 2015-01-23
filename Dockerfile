@@ -13,9 +13,10 @@ RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 RUN echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
 RUN sudo apt-get update
 RUN sudo apt-get install -y mongodb-org
-#RUN sudo apt-get install -y firefox
+RUN sudo apt-get install -y firefox
  # vnc, xvfb (falso display) y firefox
-RUN     apt-get install -y x11vnc xvfb firefox
+#RUN     apt-get install -y x11vnc xvfb firefox
+RUN sudo apt-get install -y xorg gnome-core gnome-system-tools gnome-app-install
 #RUN sudo apt-get install -y gnome-shell
 #RUN sudo apt-get install -y kubuntu-desktop
 #RUN     mkdir /.vnc
