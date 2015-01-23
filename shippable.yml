@@ -19,7 +19,9 @@ script:
  # solucionando problemas. Para realizar los test correctamente hemos arrancado mongo db.
  #Esto se refleja en dockerfile
  - mocha
+ - grunt
 
 
 after_script:
   - ./node_modules/.bin/mocha -R xunit ./test > shippable/testresults/result.xml
+  - ./node_modules/.bin/grunt -R xunit ./test > shippable/testresults/result.xml
