@@ -7,7 +7,6 @@ RUN sudo apt-get install -y python
 RUN sudo apt-get install -y git
 RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
 RUN sudo apt-get install -y nodejs
-#Ver portal web desde firefox
 RUN     echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
 RUN     apt-get update
 RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
@@ -16,7 +15,7 @@ RUN sudo apt-get update
 RUN sudo apt-get install -y mongodb-org
 #RUN sudo apt-get install -y firefox
  # vnc, xvfb (falso display) y firefox
-RUN     apt-get install -y x11vnc xvfb firefox
+#RUN     apt-get install -y x11vnc xvfb firefox
 #RUN     mkdir /.vnc
 # Password:
 #RUN     x11vnc -storepasswd 1234 ~/.vnc/passwd
