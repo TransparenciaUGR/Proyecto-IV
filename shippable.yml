@@ -16,7 +16,9 @@ before_script:
 # Running npm test to run your test cases
 script:
  - npm test
-# - mocha
+ # solucionando problemas. Para realizar los test correctamente hemos arrancado mongo db.
+ #Esto se refleja en dockerfile
+ - mocha
 
 
 after_script:
