@@ -18,8 +18,9 @@ script:
  - npm test
  # solucionando problemas. Para realizar los test correctamente hemos arrancado mongo db.
  #Esto se refleja en dockerfile
- - mocha
  - grunt
+ - mocha
+
 
 
 after_script:
