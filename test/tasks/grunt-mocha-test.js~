@@ -35,14 +35,3 @@ describe('grunt-mocha-test', function() {
       done();
     });
   });
-it('should support the timeout option', function(done) {
-    execScenario(gruntExec, 'timeoutOption', function(error, stdout, stderr) {
-      expect(stdout).to.match(/test/);
-      expect(stdout).to.match(/Abortado por warnings./);
-      expect(stdout).to.match(/1 fallo/);
-      expect(stdout).to.match(/Error: timeout excedido 500ms /);
-      expect(stderr).to.equal('');
-      done();
-    });
-  });
-
