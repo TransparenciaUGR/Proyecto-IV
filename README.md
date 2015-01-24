@@ -82,32 +82,6 @@ Para terminar, enlazamos el módulo al archivo principal de la aplicación app.j
 
 sh routes = require('./routes/shows')(app);
 
-##Aplicación básica inicial (transparencia - node.js)##
-Despliegue inicial en node.js con BD postgresql para realizar nuestras primeras pruebas iniciales. Otra información:
-
-Plantilla de aplicación en Node.js usando [Express 4](http://expressjs.com/).
-
-La aplicación se ha creado apoyada por el siguiente artículo: [Empezando a usar Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs#introduction).
-
-##Ejecución Local:##
-Se necesita instalar [Node.js](http://nodejs.org/) y las herramientas asociadas de Heroku: [Heroku Toolbelt:](https://toolbelt.heroku.com/)
-
-```shell 
-git clone git@github.com:heroku/node-js-getting-started.git
-``` 
-
-o clonar fork propio
-
-```shell
-cd node-js-getting-started
-npm install 
-npm start 
-```
-
-Nota: el nombre node-js-getting-started.git variará.
-
-Una vez realizada la ejecución local, la aplicación puede verse en [localhost:3000.](http://localhost:3000/)
-
 ##Despliegue en Heroku:##
 Vamos a realizar el despliegue de la aplicación una vez testeado un despligue de una aplicación básica en Heroku. Para ello, lo primero que tenemos que hacer es clonar el repositorio que vamos a desplegar a nuestra máquina. Lo hacemos así:
 
