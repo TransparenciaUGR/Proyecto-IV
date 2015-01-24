@@ -9,13 +9,16 @@ Creación de infraestructura virtual para transparencia.ugr.es, con creación de
 
 Repositorio liberado y amparado por la Licencia Pública General GNU para software ó GNU GPL (2007, Free Software Foundation, Inc). Queda permitido el uso, copia y distribución con las limitaciones que en la licencia se indican. Dicha licencia puede consultarse en el propio fichero de este repositorio:  [LICENCIA GNU.](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/LICENSE)
 
-- [Para Desplegar desde 0, sencillamente descargar este script "todo en uno" y ejecutar desde terminal con: ](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/IniciarDespliegue)
+- [Para Desplegar desde 0, sencillamente descargar este script "todo en uno" y ejecutarlo desde terminal (recordar persmisos de ejecución) con: ](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/IniciarDespliegue)
 
 ```sh
-	chmod +x IniciarDespliegue
 	./IniciarDespliegue
 ```
-
+**No se ha incluido la autoejecución del servidor en el script de despliegue dentro del contenedor porque no será siempre apropiado para tareas de gestión y trabajo con Bases de Datos.** A continuación, y una vez dentro, arrancamos el servidor con 1 solo comando:
+```sh
+	Proyecto-IV/node app.js	
+```
+El servidor se inicia y, tal y como nos indica la explicación, podemos conectar a través del puerto 3000.
 - Para **sólo clonar el repositorio con las dependencias básicas sin preparar el entorno, en casos donde se pretenda una instalación y acceso manual** con la automatización "básica" y un control más detallado en sistemas que hayan **usado Docker previamente**, utilizar [este script](https://github.com/TransparenciaUGR/Proyecto-IV/edit/master/scripts/preparar_app.sh) y proceder de acuerdo a los deseos del usuario.
 
 
