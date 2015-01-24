@@ -3,17 +3,32 @@ ugr-transparente
 
 Repositorio para el proyecto de la asignatura "Infraestructuras Virtuales"
 
-Proyecto elegido: Infraestructura virtual para transparencia.
-
 Creación de infraestructura virtual para transparencia.ugr.es, con creación de tests para el código, integración continua, descripción de configuración mediante Chef o Ansible y configuración del despliegue automático del mismo en cualquier servicio.
 
-[Para Desplegar, sencillamente descargar este script y ejecutar desde terminal con: ](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/IniciarDespliegue)
+###Guía Rápida:
+
+Repositorio liberado y amparado por la Licencia Pública General GNU para software ó GNU GPL (2007, Free Software Foundation, Inc). Queda permitido el uso, copia y distribución con las limitaciones que en la licencia se indican. Dicha licencia puede consultarse en el propio fichero de este repositorio:  [LICENCIA GNU.](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/LICENSE)
+
+- [Para Desplegar desde 0, sencillamente descargar este script "todo en uno" y ejecutar desde terminal con: ](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/IniciarDespliegue)
 
 ```sh
-chmod +x IniciarDespliegue
-./IniciarDespliegue
+	chmod +x IniciarDespliegue
+	./IniciarDespliegue
 ```
 
+- Para **sólo clonar el repositorio con las dependencias básicas sin preparar el entorno, en casos donde se pretenda una instalación y acceso manual** con la automatización "básica" y un control más detallado en sistemas que hayan **usado Docker previamente**, utilizar [este script](https://github.com/TransparenciaUGR/Proyecto-IV/edit/master/scripts/preparar_app.sh) y proceder de acuerdo a los deseos del usuario.
+
+
+- **Todos los cambios se integran en tiempo real y de manera totalmente automatizada a nuestra abstracción a través de la simbiosis Github - Docker.** Para realizar cambios en el sistema e integrarlos en nuevos entornos de trabajo o desarrollo, modificar [el fichero Dockerfile](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/Dockerfile) o [el repositorio](https://github.com/TransparenciaUGR/Proyecto-IV) y volver a ejecutar el script de despliegue.  Una vez se cambie el Dockerfile (o cualquier otro elemento), se añadan o se eliminen elementos, **Docker rehará el build por su cuenta**, es decir, no es necesaria ninguna acción adicional. No obstante tener en cuenta que, en el caso de despliegue automatizado, la etiqueta por defecto es **"latest"**. Si no queremos esa, consultar la deseada con `sudo docker images `. Nótese que habrá que indicar siempre el repositorio sobre el que se trabaja y el Tag: am83/proyecto-iv:**master** ó am83/proyecto-iv:**latest* por ejemplo.
+
+<br> <img src=http://s7.postimg.org/umfdwgkmz/ejemplobuild.jpg></img>
+
+- Para **"limpiar la casa"** de imágenes y contenedores Docker ejecutar los scripts [eliminarContainers](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/scripts/EliminarContainers) y [eliminarImagenes](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/scripts/EliminarImagenes).
+
+- Para acceder directamente a través del PaaS de Heroku [click aqui: ](https://transparente-ugr.herokuapp.com/) o pegar en el navegador:
+```sh
+https://transparente-ugr.herokuapp.com/
+```
 Portal de transaparencia de la [UGR](http://www.ugr.es/) para públicar los datos y hacerlos accesibles y tratables. La aplicación web está diseñada en [node.js](http://nodejs.org/) junto con [express](http://expressjs.com/) y [jade](http://jade-lang.com/). [Express](http://expressjs.com/) es un framwork para desarrollar aplicaciones web mientras que [jade](http://jade-lang.com/) es un modulo para trabajar con plantillas y poder implementar la arquitectura Model Vista Controlador.
 
 La web está publicada en [transparente.ugr.es](http://transparente.ugr.es).
@@ -182,7 +197,27 @@ Ahora podemos ver pinchando en la imagen como se ha establecido la conexión:
 
 Docker es un proyeto de código abierto que automatiza el despliegue de aplicaciones dentro de contenedores software, proporcionando una capa adicional de abstracción y automatización de la virtualización a nivel de sistema operativo de Linux. Docker utiliza características de aislamiento de recursos del kernel de Linux, como cgroups.
 
-Despliegue en Docker:
+##¿Por qué usamos Docker?##
++ Es fácil de instalar
++ Es más seguro que otros métodos (para la máquina anfitriona) ya que los usuarios que acceden a la aplicación solo pueden acceder al entorno creado en el contenedor
++ Permite integración continua
++ Podemos basarnos en otro contenedor ya creado para ahorranos trabajo
++ Gracias a que los contenedores quedan publicados en su web, si alguien quiere hacer una colaboración para mejorar nuestro sistema de virtualización, puede hacerlo
++ Estos "tapers" pueden usarse tanto para pruebas como para producción (desde la versión 1 de Docker, ya que las anteriores no eran lo suficientemente maduras)
+
+##Lo que todo usuario debe saber##
+**Sección explciativa, todo este proceso está automatizado** en el [script de despliegue](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/IniciarDespliegue) al comienzo de este documento.
+
+- Instalar Docker
+
+En primer lugar actualizamos los repositorios e instalamos docker. Lo hacemos con:
+
+```shell
+sudo apt-get update
+sudo apt-get install -y docker.io
+```
+
+- Despliegue desde Docker:
 
 ```shell 
 sudo rm /var/run/docker.pid 
@@ -199,18 +234,10 @@ Aquí podemos ver los comandos ejecutados y funcionando:
 ![Captura2](https://cloud.githubusercontent.com/assets/8874620/5859424/5e88a158-a25a-11e4-863a-0233668a822d.png)
 ![Captura3](https://cloud.githubusercontent.com/assets/8873210/5872668/3ce765a4-a2ee-11e4-9521-2f058c90d263.PNG)
 
-##¿Por qué usamos Docker?##
-+ Es fácil de instalar
-+ Es más seguro que otros métodos (para la máquina anfitriona) ya que los usuarios que acceden a la aplicación solo pueden acceder al entorno creado en el contenedor
-+ Permite integración continua
-+ Podemos basarnos en otro contenedor ya creado para ahorranos trabajo
-+ Gracias a que los contenedores quedan publicados en su web, si alguien quiere hacer una colaboración para mejorar nuestro sistema de virtualización, puede hacerlo
-+ Estos "tapers" pueden usarse tanto para pruebas como para producción (desde la versión 1 de Docker, ya que las anteriores no eran lo suficientemente maduras)
 
-##Dockerfile##
-Para generar este contenedor, creamos el  [Dockerfile](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/Dockerfile), que es el que toma Docker para generar un contenedor. En él, se indican distintas órdenes que permiten al sistema saber qué queremos que se instale. 
 
-El contenido de dicho fichero:
+- Dockerfile
+Para generar este contenedor, creamos el  [Dockerfile](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/Dockerfile), que es el que toma Docker para generar un contenedor. En él, se indican distintas órdenes que permiten al sistema saber qué queremos que se instale y los repositorios o dependencias adicionales que requeriremos: 
 
 ```shell
 
@@ -252,14 +279,7 @@ RUN cd Proyecto-IV && npm install mocha chai supertest
 #CMD ["nohup","/usr/bin/nodejs", "ugr-transparente-servidor/lanzarTransparente.sh"]
 ```
 
-##Instalar Docker
 
-En primer lugar actualizamos los repositorios e instalamos docker. Lo hacemos con:
-
-```shell
-sudo apt-get update
-sudo apt-get install -y docker.io
-```
 
 Es posible que al ejecutar docker nos de un error con el fichero docker.pid. Para ello, tenemos que eliminarlo de la siguiente forma:
 
@@ -270,31 +290,31 @@ sudo rm /var/run/docker.pid
 Ahora sí, ejecutamos docker:
 
 ```shell
-docker -d &
+sudo docker -d &
 ```
 
-Instalación de la imagen del contenedor, en este caso hemos elegido ubuntu
+Instalación de la imagen del contenedor, en este caso hemos usado la nuestra:
 
 ```shell
-docker pull ubuntu
+docker pull am83/proyecto-iv (para nuestro caso)
 ```
 
-##Preparar jaula sin Docker
+- ##Opción alternativa: Preparar jaula sin Docker##
 
-Instalamos debootstrap, programa para crear jaulas
+- Instalamos debootstrap, programa para crear jaulas
 
 ```shell
 apt-get install debootstrap
 ```
 
-Creamos el repositorio donde se almacenaran las jaula
+- Creamos el repositorio donde se almacenaran las jaulas
 
 ```shell
 mkdir /home/jaulas
 debootstrap --arch=amd64 trusty /home/jaulas/jaula-iv/ http://archive.ubuntu.com/ubuntu
 ```
 
-Preparar el entorno para la app y la ejecutamos
+- Preparar el entorno para la app:
 
 ```shell
 apt-get install -y curl
@@ -319,7 +339,7 @@ git pull
 ```
 
 ##Estudio sobre Shippable##
-Vamos a realizar un estudio sobre la plataforma shippable, esto nos permitirá más adelante realizar test para probar la aplicación transparente ugr.
+Vamos a realizar un estudio sobre la plataforma shippable, esto nos permite realizar test para probar la aplicación transparente ugr.
 
 <b>¿Por qué Shippable?</b>
 En primer lugar y aprovechando el uso GitHub nos hemos decantado por usar Shippable ya que nos permite de una forma fácil y efectiva realizar un build de nuestro proyecto en menos de 30 segundo, sin la necesidad de realizar un registro previo en Shippable (nos sirve la cuenta que tenemos en GitHub).
