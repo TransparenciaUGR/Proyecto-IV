@@ -41,12 +41,19 @@ Su funcionalidad de podría dividir en:
 
 Y un apartado que incluye la Normativa Legal que rige en la Ley de transparencia, normativas y convenios.
 
+##Tests unitarios##
+A la hora de la realización de uno de los puntos de la práctica 4, se ha procedido a la creación de diversos tests unitarios, que han sido ubicados en las carpetas [tasks](https://github.com/TransparenciaUGR/Proyecto-IV/tree/master/tasks) y [test](https://github.com/TransparenciaUGR/Proyecto-IV/tree/master/test). En concreto los tests creados han sido:
+- [mocha-test.js](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/tasks/mocha-test.js)
+- [MochaWrapper.js](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/tasks/lib/MochaWrapper.js)
+- [grunt-mocha-test.js](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/test/tasks/grunt-mocha-test.js)
+- [timeoutOption](https://github.com/TransparenciaUGR/Proyecto-IV/tree/master/test/scenarios/timeoutOption)
+- [Otros tests](https://github.com/TransparenciaUGR/Proyecto-IV/tree/master/test/scenarios/tests)
+- [testFailure](https://github.com/TransparenciaUGR/Proyecto-IV/tree/master/test/scenarios/testFailure)
+
 ##¿Qué es Heroku?##
 Es un servicio de Hosting en la nube. Esto ayuda a que los clientes no tienen que contar con infraestructura, el tiempo de procesamiento y almacenamiento, si no que todo esto se le renta a un tercero. Es un servicio gratuito hasta los 5 MB de espacio para base de datos y 50 MB para los archivos incluyendo repositorios Git. Es un servicio basado en la nube de Amazon Web Services. La implementación de este servicio se hace a través de GIT y se instala a través de un gem.
 
 Las ventajas que nos ofrece usar Heroku es que podemos olvidarnos de usar servidores, pudiendo enfocarnos en la aplicación que queremos desplegar, y es gratuita en cierto modo, puesto que sí se sobrepasan los límites anteriormente mencionados se empezará a pagar una cuota. Heroku puede trabajar con con MySQL, SQLite, PostgreSQL, MongoDB, CouchDB y Memcache a través de un tercero Mongo HQ y Cloudant añadidos como add-ons.
-
-Para el caso de nuestra aplicación para trasnparente ugr, utilizaremos la base de datos MongoDB aunque aún no está implementada en la aplicación de ejemplo. Ya que para poder añadirla nos pide la verificación de cuenta con la tarjeta de crédito y tenemos dudas sobre ello.
 
 ##Despliegue en Heroku:##
 Vamos a realizar el despliegue de la aplicación una vez testeado un despligue de una aplicación básica en Heroku. Para ello, lo primero que tenemos que hacer es clonar el repositorio que vamos a desplegar a nuestra máquina. Lo hacemos así:
