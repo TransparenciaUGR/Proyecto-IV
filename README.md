@@ -48,40 +48,6 @@ Las ventajas que nos ofrece usar Heroku es que podemos olvidarnos de usar servid
 
 Para el caso de nuestra aplicación para trasnparente ugr, utilizaremos la base de datos MongoDB aunque aún no está implementada en la aplicación de ejemplo. Ya que para poder añadirla nos pide la verificación de cuenta con la tarjeta de crédito y tenemos dudas sobre ello.
 
-##MongoDB##
-En este apartado vamos a indicar como crear y usar una base de datos para nuestro proyecto usando <b>MongoDB</b>.
-
-Lo primero que habrá que hacer será crear una base de datos. Para ello, vamos a crear un modelo en un archivo con extensión .js que incluya la información de dicha base de datos. Un ejemplo de este archivo seria:
-
-```sh var mongoose = require('mongoose'), Sch = mongoose.Sch;
-
-var showSch = new Sch({ title: { type: String }, year: { type: Number }, country: { type: String }, 
-});
-
-module.exports = mongoose.model('Show', showSch); ```
-
-Con esto ya podríamos implementar la conexión a la BD en el archivo app.js de nuestro proyecto, añadiendole las siguientes lineas:
-
-sh var mongoose = require('mongoose'); mongoose.connect('mongodb://localhost/shows');
-
-Para que esto funcione en nuestro entorno local, necesitamos tener instalado MongoDB. Dependiendo de vuestro sistema operativo se hace de una forma u otra. [Aquí podemos encontrar la documentación oficial](http://docs.mongodb.org/manual/tutorial/install-mongodb-on-os-x/). Si tenemos un Mac, se instala de la misma manera que Node.js con <b>brief update</b> y <b>brief install mongodb.</b>
-
-Una vez hecho esto, para poder iniciar MongoDB se debe ejecutar en otra terminal mongod. Con Mongo arrancado ya podemos ejecutar la aplicación con <b>node app.js</b> desde la terminal.
-
-Ahora desde otra terminal, podemos entrar al shell de MongoDB y comprobar que la base de datos se ha creado correctamente. Para ello ejecutamos el comando <b>mongo</b>:
-
-```shell 
-mongo MongoDB shell version: 2.4.1 connecting to: test
-```
-
-use shows switched to db shows show dbs local 0.078125GB shows (empty) 
-
-Una vez introducida información en la BD, tenemos que unir las funciones para el manejo de la información que usa mongoDB al proyecto, indicando <b>app.get("funcion");</b> siendo "funcion" la función correspondiente de introducir, modificar o eliminar información.
-
-Para terminar, enlazamos el módulo al archivo principal de la aplicación app.js:
-
-sh routes = require('./routes/shows')(app);
-
 ##Despliegue en Heroku:##
 Vamos a realizar el despliegue de la aplicación una vez testeado un despligue de una aplicación básica en Heroku. Para ello, lo primero que tenemos que hacer es clonar el repositorio que vamos a desplegar a nuestra máquina. Lo hacemos así:
 
