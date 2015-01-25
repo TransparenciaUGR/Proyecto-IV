@@ -7,14 +7,15 @@ RUN sudo apt-get install -y python
 RUN sudo apt-get install -y git
 RUN curl -sL https://deb.nodesource.com/setup | sudo bash -
 RUN sudo apt-get install -y nodejs
-#RUN     echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
-#RUN     apt-get update
+# postgresql-server-dev-X.Y para extensión server-side y libpq-dev para aplicación client-side.
+RUN sudo apt-get install -y python-psycopg2
+RUN sudo apt-get install -y libpq-dev
 RUN sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 RUN echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | sudo tee /etc/apt/sources.list.d/mongodb.list
 RUN sudo apt-get update
 RUN sudo apt-get install -y mongodb-org
 RUN sudo apt-get install -y firefox
- # vnc, xvfb (falso display) y firefox
+#A elección del usuario usar entorno gráfico: gnome, kubuntu, vnc, xvfb (falso display) y firefox
 #RUN     apt-get install -y x11vnc xvfb firefox
 #RUN sudo apt-get install -y xorg gnome-core gnome-system-tools gnome-app-install
 #RUN sudo apt-get install -y gnome-shell
@@ -22,7 +23,7 @@ RUN sudo apt-get install -y firefox
 #RUN     mkdir /.vnc
 # Password:
 #RUN     x11vnc -storepasswd 1234 ~/.vnc/passwd
-# Autostart firefox
+# A elección del usuario ejecución automática Autostart firefox
 #RUN     bash -c 'echo "firefox" >> /.bashrc'
 RUN git clone https://github.com/TransparenciaUGR/Proyecto-IV.git
 RUN cd Proyecto-IV && npm install
