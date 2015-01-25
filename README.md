@@ -37,9 +37,21 @@ https://transparente-ugr.herokuapp.com/
  
 <br> <img src=http://s1.postimg.org/scmbyp79r/Sin_t_tulo1.png></img>
 
-Las direcciones pueden verse en la captura anterior, teniendo siempre en cuenta que con Express Server y en la aplicación de transparente hay que hacer el listening en el puerto 3.000 y que la máquina se ha configurado en Azure con extremo de entrada HTTPS y protocolo TCP. Para gestionar la máquina de Azure y por tanto hacer cambios en la cloud app se ha trabajado mediante SSH: `ssh usuario@23.97.226.31`.
+**Para Acceder a la Aplicación en la Nube para el portal de transparencia, ir a la siguiente dirección:**
 
-Para crear esta u otra máquina en Azure u otra **infraestructura como servicio** , **sólo hay que usar** el script para [acceso y ejecución en la máquina](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/scripts/levantaAzure), que realizará las invocaciones a [este otro script](ttps://github.com/TransparenciaUGR/Proyecto-IV/blob/master/scripts/maquinaNube) para instalar los paquetes, dependencias e iniciar los servicios necesarios *en el PaaS*.
+```sh
+http://ugrtransparente.cloudapp.net:3000/
+```
+
+A continuación se adjunta una captura de la **ejecución en el PaaS** junto con una demostración realizada con fines de verificación:
+
+<br><img src=http://s9.postimg.org/my5px9i4f/Azure_Working.png></img>
+
+Las direcciones DNS pueden verse en la captura anterior. Tener siempre en cuenta que con Express Server y en la aplicación de transparente hay que hacer el listening en el puerto 3.000 y que la máquina se ha configurado en Azure con extremo de entrada HTTP y protocolo TCP. Para gestionar la máquina de Azure y por tanto hacer cambios en la cloud app se ha trabajado mediante SSH: `ssh usuario@23.97.226.31`.
+
+Para crear esta u otra máquina en Azure u otra **infraestructura como servicio** , **sólo hay que usar** el script para [acceso y ejecución en la máquina](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/scripts/levantaAzure), que realizará las invocaciones a [este otro script](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/scripts/maquinaNube) para instalar los paquetes, dependencias e iniciar los servicios necesarios *en el PaaS*.
+
+**Tener en cuenta que habrá que ingresar por SSH la primera vez para iniciar la ejecución**, y que se ha hecho así para tener más margen de personalización y de uso manual del sistema, aunque si se desea se puede automatizar el proceso en el script. 
 
 ---------------------------------------------------------------------------------------------------------------------------
 ###Sobre el Proyecto:
