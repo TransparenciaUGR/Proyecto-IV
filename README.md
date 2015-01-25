@@ -9,7 +9,7 @@ Creación de infraestructura virtual para transparencia.ugr.es, con creación de
 
 Repositorio liberado y amparado por la Licencia Pública General GNU para software ó GNU GPL (2007, Free Software Foundation, Inc). Queda permitido el uso, copia y distribución con las limitaciones que en la licencia se indican. Dicha licencia puede consultarse en el propio fichero de este repositorio:  [LICENCIA GNU.](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/LICENSE)
 
-- [Para Desplegar desde 0, sencillamente descargar este script "todo en uno" y ejecutarlo desde terminal (recordar persmisos de ejecución) con: ](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/IniciarDespliegue)
+- [Para Desplegar desde 0 en local, sencillamente descargar este script "todo en uno" y ejecutarlo desde terminal (recordar persmisos de ejecución) con: ](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/IniciarDespliegue)
 
 ```sh
 	./IniciarDespliegue
@@ -32,6 +32,19 @@ El servidor se inicia y, tal y como nos indica la explicación, podemos conectar
 ```sh
 https://transparente-ugr.herokuapp.com/
 ```
+
+- Se ha creado una MV y su correspondiente cloud app en la plataforma Azure:
+ 
+<br> <img src=http://s1.postimg.org/scmbyp79r/Sin_t_tulo1.png></img>
+
+Las direcciones pueden verse en la captura anterior, teniendo siempre en cuenta que con Express Server y en la aplicación de transparente hay que hacer el listening en el puerto 3.000 y que la máquina se ha configurado en Azure con extremo de entrada HTTPS y protocolo TCP. Para gestionar la máquina de Azure y por tanto hacer cambios en la cloud app se ha trabajado mediante SSH: `ssh usuario@23.97.226.31`.
+
+Para crear esta u otra máquina en Azure u otra **infraestructura como servicio** , **sólo hay que usar** el script para [acceso y ejecución en la máquina](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/scripts/levantaAzure), que realizará las invocaciones a otros scripts para instalar los paquetes, dependencias y realizar las conexiones necesarias.
+
+---------------------------------------------------------------------------------------------------------------------------
+###Sobre el Proyecto:
+
+
 Portal de transaparencia de la [UGR](http://www.ugr.es/) para públicar los datos y hacerlos accesibles y tratables. La aplicación web está diseñada en [node.js](http://nodejs.org/) junto con [express](http://expressjs.com/) y [jade](http://jade-lang.com/). [Express](http://expressjs.com/) es un framwork para desarrollar aplicaciones web mientras que [jade](http://jade-lang.com/) es un modulo para trabajar con plantillas y poder implementar la arquitectura Model Vista Controlador.
 
 La web está publicada en [transparente.ugr.es](http://transparente.ugr.es).
