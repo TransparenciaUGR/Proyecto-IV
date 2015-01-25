@@ -1,0 +1,5 @@
+#!/bin/bash
+
+#Parte de la automatización. 
+#Están los datos de mi cloudapp, reemplazar usuario/IP por la de la máquina deseada.
+ssh usuario@23.97.226.31 'bash -s' < maquinaNube
