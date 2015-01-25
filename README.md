@@ -47,7 +47,7 @@ A continuación se adjunta una captura de la **ejecución en el PaaS** junto con
 
 <br><img src=http://s9.postimg.org/my5px9i4f/Azure_Working.png></img>
 
-Las direcciones DNS pueden verse en la captura anterior. Tener siempre en cuenta que con Express Server y en la aplicación de transparente hay que hacer el listening en el puerto 3.000 y que la máquina se ha configurado en Azure con extremo de entrada HTTP y protocolo TCP. Para gestionar la máquina de Azure y por tanto hacer cambios en la cloud app se ha trabajado mediante SSH: `ssh usuario@23.97.226.31`.
+Las direcciones DNS pueden verse en la captura anterior. Tener siempre en cuenta que con Express Server y en la aplicación de transparente hay que hacer el listening en el puerto 3.000 y que la máquina se ha configurado en Azure con extremo de entrada HTTP y protocolo TCP. Para gestionar la máquina de Azure y por tanto hacer cambios en la cloud app se ha trabajado mediante SSH: `ssh usuario@23.97.226.31`. Para mantener el proceso ejecutándose tras desconectar de SSH se ha usado tmux.
 
 Para crear esta u otra máquina en Azure u otra **infraestructura como servicio** , **sólo hay que usar** el script para [acceso y ejecución en la máquina](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/scripts/levantaAzure), que realizará las invocaciones a [este otro script](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/scripts/maquinaNube) para instalar los paquetes, dependencias e iniciar los servicios necesarios *en el PaaS*.
 
