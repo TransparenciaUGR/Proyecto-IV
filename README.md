@@ -19,6 +19,9 @@ Repositorio liberado y amparado por la Licencia Pública General GNU para softwa
 	Proyecto-IV/node app.js	
 ```
 El servidor se inicia y, tal y como nos indica la explicación, podemos conectar a través del puerto 3000.
+
+Se han creado ficheros que posibiliten el uso de Ansible y dado el caso de querer, de Vagrant y se incluyen con sus correspondientes scripts de aprovisionamiento para [Ansible: transparente.yml](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/Ansible/transparente.yml). y [Vagrant: vagrantfile](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/vagrant/vagrantfile).
+
 - Para **sólo clonar el repositorio con las dependencias básicas sin preparar el entorno, en casos donde se pretenda una instalación y acceso manual** con la automatización "básica" y un control más detallado en sistemas que hayan **usado Docker previamente**, utilizar [este script](https://github.com/TransparenciaUGR/Proyecto-IV/edit/master/scripts/preparar_app.sh) y proceder de acuerdo a los deseos del usuario.
 
 
