@@ -1,0 +1,17 @@
+- hosts: azure
+	 sudo: yes
+	 remote_user: usuario
+	 tasks:
+		-name: Instalacion elems
+			apt: name=g++ state=present
+			apt: name=curl state=present
+			apt: name=python state=present
+      			apt: name=python-psycopg2 state=present
+			apt: name=libpq-dev state=present
+      			apt: name=git state=present
+			apt: name=nodejs state=present
+			apt: name=mongodb-org state=present
+    		- name: Inicializacion
+      			command: Proyecto-IV/npm install 
+    		- name: Iniciar aplicación
+      			command: Proyecto-IV/node app.js
