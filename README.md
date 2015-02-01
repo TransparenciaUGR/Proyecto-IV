@@ -5,6 +5,14 @@ Repositorio para el proyecto de la asignatura "Infraestructuras Virtuales"
 
 Creación de infraestructura virtual para transparencia.ugr.es, con creación de tests para el código, integración continua, descripción de configuración mediante Chef o Ansible y configuración del despliegue automático del mismo en cualquier servicio.
 
+Integrantes del grupo:
+
+Jose Carlos Sánchez Hurtado.<br>
+Alberto Mesa Navarro.<br>
+Jesus Navarro Guzmán.<br>
+Marcos Jiménez Fernández.<br>
+Francico Toranzo Santiago.<br>
+
 ###Guía Rápida:
 
 Repositorio liberado y amparado por la Licencia Pública General GNU para software ó GNU GPL (2007, Free Software Foundation, Inc). Queda permitido el uso, copia y distribución con las limitaciones que en la licencia se indican. Dicha licencia puede consultarse en el propio fichero de este repositorio:  [LICENCIA GNU.](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/LICENSE)
@@ -104,14 +112,6 @@ Una vez conectados el siguiente paso sera instalar en la máquina todas las herr
 Portal de transaparencia de la [UGR](http://www.ugr.es/) para públicar los datos y hacerlos accesibles y tratables. La aplicación web está diseñada en [node.js](http://nodejs.org/) junto con [express](http://expressjs.com/) y [jade](http://jade-lang.com/). [Express](http://expressjs.com/) es un framwork para desarrollar aplicaciones web mientras que [jade](http://jade-lang.com/) es un modulo para trabajar con plantillas y poder implementar la arquitectura Model Vista Controlador.
 
 La web está publicada en [transparente.ugr.es](http://transparente.ugr.es).
-
-Integrantes del grupo:
-
-Jose Carlos Sánchez Hurtado.<br>
-Alberto Mesa Navarro.<br>
-Jesus Navarro Guzmán.<br>
-Marcos Jiménez Fernández.<br>
-Francico Toranzo Santiago.<br>
 
 ##¿Qué es transparenteUGR?##
 <b>transparente.ugr</b> es un portal web dedicado a ofrecer información a la sociedad y en particular a la Comunidad Universitaria, teniendo como objetivo el libre acceso y veracidad de esa información.
