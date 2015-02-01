@@ -57,6 +57,47 @@ Para crear esta u otra máquina en Azure u otra **infraestructura como servicio*
 **Tener en cuenta que habrá que ingresar por SSH la primera vez para iniciar la ejecución**, y que se ha hecho así para tener más margen de personalización y de uso manual del sistema, aunque si se desea se puede automatizar el proceso en el script. 
 
 ---------------------------------------------------------------------------------------------------------------------------
+
+###Ejecución de TransparenteUgr en PaaS Amazón Ec2
+
+Hemos obtado por usar la plataforma de amazon ya que es nos ofrece una gran posibilidad en cuanto a recursos a parte de ser rápida, fiable y sencilla.
+
+Para poder usar Amazon Web Services es necesario crearnos una cuenta en amazon:
+
+<a href="http://es.tinypic.com?ref=154hwyf" target="_blank"><img src="http://i57.tinypic.com/154hwyf.png" border="0" alt="Image and video hosting by TinyPic"></a>
+
+Una vez registrados ya podemos comenzar a crearnos una máquina para poder trabajar en la nube, amazon nos ofrece una gran cantidad de sistemas a elegir vamos a numerar algunas de las imagenes que nos ofrece:
+
+1º Amazon Linux.
+
+2º Red Hat Enterprise Linux
+
+3º SUSE Linux Entreprise Server.
+
+4º Ubuntu Server 14.04 LTS
+
+5º Microsoft Windows Server 2012 R2 entre otras, en esta imagen podemos ver algunas de las imagenes ofrecidas por Amazon Web Service:
+
+<a href="http://es.tinypic.com?ref=30ng5xk" target="_blank"><img src="http://i59.tinypic.com/30ng5xk.png" border="0" alt="Image and video hosting by TinyPic"></a>
+
+<a href="http://es.tinypic.com?ref=b4gs5x" target="_blank"><img src="http://i62.tinypic.com/b4gs5x.png" border="0" alt="Image and video hosting by TinyPic"></a>
+
+Una vez elegida la imagen con la cual vamos a trabajar, en mi caso he elegido Ubuntu Server 14.04 LTS procedemos a elegir las características de esta, tenemos que tener mucho cuidado con las características ya que si elegimos unas prestaciones hardware potentes tendremos que pagar.
+
+Imagen máquina ya creada: 
+
+<a href="http://es.tinypic.com?ref=dmbres" target="_blank"><img src="http://i58.tinypic.com/dmbres.png" border="0" alt="Image and video hosting by TinyPic"></a>
+
+Una vez creada es necesario realizar una conexión a ella, para ello establecemos una conexión `ssh`. Para ello ejecutamos en nuestra máquina local en mi caso Ubuntu 14, el siguiente comando `ssh -i transparente.pem ubuntu@54.201.57.104 ` el archivo transparente.pem es un cifrado que nos a proporcionado amazon para poder realizar la conexión ssh.
+
+<a href="http://es.tinypic.com?ref=2le0a4z" target="_blank"><img src="http://i57.tinypic.com/2le0a4z.png" border="0" alt="Image and video hosting by TinyPic"></a>
+
+En esta imagen podemos observar como se ha establecido la conexión: 
+
+<a href="http://es.tinypic.com?ref=xdsgon" target="_blank"><img src="http://i57.tinypic.com/xdsgon.png" border="0" alt="Image and video hosting by TinyPic"></a>
+
+Una vez conectados el siguiente paso sera instalar en la máquina todas las herramientas necesarias para poder ejecuta la aplicación de TransparenteUgr para ello he llevado a cabo la elaboración de un script para automatizar dicho proceso [ scriptAmazon](https://github.com/TransparenciaUGR/Proyecto-IV/blob/master/scripts/servicioAmazonEc2.sh)
+
 ###Sobre el Proyecto:
 
 
