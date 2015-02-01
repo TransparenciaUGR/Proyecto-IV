@@ -1,4 +1,5 @@
 #!/bin/bash
+#Scipt desarrollado por @Jesux11 mi contribución desaparecio al realizar modificaciones en las carpetas.
 
 #En primer lugar vamos a crear un sistema, tal y como hemos visto en
 #la práctica.
