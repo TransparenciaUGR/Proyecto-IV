@@ -27,11 +27,11 @@ RUN sudo apt-get install -y firefox
 #RUN     bash -c 'echo "firefox" >> /.bashrc'
 RUN git clone https://github.com/TransparenciaUGR/Proyecto-IV.git
 RUN cd Proyecto-IV && npm install
-RUN cd Proyecto-IV && npm install -g grunt-cli
-RUN cd Proyecto-IV && npm install -g grunt-contrib-clean --save-dec
-RUN cd Proyecto-IV && npm install -g grunt-contrib-copy --save-dec
-RUN cd Proyecto-IV && npm install -g grunt-blanket --save-dec
-RUN cd Proyecto-IV && npm install -g grunt-coveralls --save-dec
+RUN cd Proyecto-IV && npm install grunt-cli --save-dev
+RUN cd Proyecto-IV && npm install grunt-contrib-clean --save-dev
+RUN cd Proyecto-IV && npm install grunt-contrib-copy --save-dev
+RUN cd Proyecto-IV && npm install grunt-blanket --save-dev
+RUN cd Proyecto-IV && npm install grunt-coveralls --save-dev
 RUN cd Proyecto-IV && npm install -g mocha
 RUN cd Proyecto-IV && npm install mocha chai supertest
 #Solucionando erro en Shippable al intentar conectat con base de datos
